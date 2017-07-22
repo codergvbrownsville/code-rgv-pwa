@@ -1,0 +1,19 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react", 
+    "sourceMap": true,
+    "outDir": "./dist",
+    "strict": true,    
+    "moduleResolution": "node",
+    "rootDirs": ["src"],       
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2015", "dom"]
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

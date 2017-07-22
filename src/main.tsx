@@ -17,3 +17,5 @@ const routes = (
 );
 
 render(<AppContainer />, document.getElementById("app"));
+
+// testing code coverage

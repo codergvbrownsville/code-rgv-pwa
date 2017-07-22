@@ -7,8 +7,8 @@ import * as process from "process";
 
 const name =
   process.env.NODE_ENV === "production"
-    ? "[name].[hash].js"
-    : "[name].[hash].js";
+    ? "[name].[hash].bundle.js"
+    : "[name].[hash].bundle.js";
 
 export const output = {
   filename: name,

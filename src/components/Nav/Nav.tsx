@@ -1,10 +1,10 @@
-import * as React from "react";
-
 /**
  * Navigation Component
  */
-export class Nav extends React.Component {
+import * as React from "react";
+
+export class Nav extends React.PureComponent {
   public render() {
-    return <div>Nav</div>;
+    return <button className="button is-primary">Button</button>;
   }
 }

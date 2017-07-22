@@ -11,7 +11,8 @@
     "clean": "gulp clean",
     "precommit": "lint-staged",
     "prepush": "run-p clean build lint test",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "npm run prepush"
   },
   "repository": {
     "type": "git",

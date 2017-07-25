@@ -3,6 +3,8 @@
  */
 
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
+import * as ExtractTextPlugin from "extract-text-webpack-plugin";
+import { offLineConfig } from "./offLineConfig";
 import * as webpack from "webpack";
 import { config } from "./config";
 
@@ -23,6 +25,10 @@ const commonPlugins = [
     filename: "index.html",
     inject: "body",
     template: "./src/index.html"
+  }),
+  offLineConfig(),
+  new ExtractTextPlugin({
+    filename: "style.css"
   })
 ];
 

@@ -110,7 +110,6 @@
   },
   "dependencies": {
     "bulma": "0.4.4",
-    "co": "4.6.0",
     "fp-ts": "0.4.0",
     "immutable": "3.8.1",
     "ramda": "0.24.1",

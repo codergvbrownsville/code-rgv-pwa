@@ -3,7 +3,6 @@
  */
 // tslint:disable-next-line:no-import-side-effect
 import "./pwa";
-// tslint:disable-next-line:no-import-side-effect
 import "./style.scss";
 import * as React from "react";
 import { render } from "react-dom";

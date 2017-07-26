@@ -14,26 +14,46 @@ export class Nav extends React.PureComponent {
               <strong>CodeRGV</strong>
             </span>
           </a>
-          <div className="navbar-burger">
+          <div className="navbar-burger" data-target="codeRgvMenu">
             <span />
             <span />
             <span />
           </div>
         </div>
-        <div className="navbar-menu">
+        <div className="navbar-menu" id="codeRgvMenu">
           <div className="navbar-start">
             <Link to="/" className="navbar-item">
               Home
             </Link>
-            <Link to="/" className="navbar-item">
+            <Link to="/events" className="navbar-item">
               Events
             </Link>
-            <Link to="/" className="navbar-item">
+            <Link to="/projects" className="navbar-item">
               Projects
             </Link>
-            <Link to="/" className="navbar-item">
+            <Link to="/about" className="navbar-item">
               About
             </Link>
+          </div>
+          <div className="navbar-end">
+            <a
+              href="https://github.com/codergvbrownsville"
+              className="navbar-item"
+              target="_blank"
+              role="button"
+              rel="noopener noreferrer"
+            >
+              <i className="fa fa-github" />
+            </a>
+            <a
+              href="https://www.facebook.com/codergvbrownsville/"
+              className="navbar-item"
+              target="_blank"
+              role="button"
+              rel="noopener noreferrer"
+            >
+              <i className="fa fa-facebook-square" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </nav>

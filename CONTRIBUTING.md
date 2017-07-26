@@ -1,3 +1,3 @@
-# Contributing to Code Rgv web app
+# Contributing to CodeRGG Web application
 
-First and foremost read our Code of Conduct! 
+First and foremost read our [Code of Conduct](https://github.com/codergvbrownsville/code-rgv-pwa/blob/master/CODE_OF_CONDUCT.md)!:smiley: 

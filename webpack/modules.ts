@@ -31,10 +31,6 @@ export const modules = {
       test: /\.(png|jpg|gif|ico|woff|woff2|ttf|svg|eot|PNG)$/
     },
     {
-      loader: require.resolve("file-loader"),
-      test: /\.png$/
-    },
-    {
       loader: ExtractTextPlugin.extract({
         fallback: "style-loader",
         use: ["css-loader", "postcss-loader"]

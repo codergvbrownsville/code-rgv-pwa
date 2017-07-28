@@ -2,11 +2,13 @@
  * Applicaion Container
  */
 import * as React from "react";
+import { Nav } from "./components";
 
 export class AppContainer extends React.Component<any, any> {
   public render() {
     return (
       <div>
+        <Nav />
         <div className="container">
           {this.props.children}
         </div>

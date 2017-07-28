@@ -12,6 +12,7 @@ export const offLineConfig = () =>
     caches: {
       main: ["index.html", "*.bundle.js"],
       // additional: ["*.bundle.js", "*.worker.js", ":externals:"],
+      additional: [":externals:"],
       optional: [":rest:"]
     },
     cacheMaps: [

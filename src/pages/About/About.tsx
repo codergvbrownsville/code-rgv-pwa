@@ -3,7 +3,8 @@
  */
 import * as React from "react";
 
-export class About extends React.PureComponent {
+// tslint:disable-next-line:no-default-export
+export default class About extends React.PureComponent {
   public render() {
     return (
       <div>

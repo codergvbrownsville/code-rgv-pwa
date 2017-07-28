@@ -13,7 +13,7 @@ import { makeStore } from "./makeStore";
 import { AppContainer } from "./AppContainer";
 import {
   Home,
-  About,
+  AboutAsync,
   Codergv,
   StrategyPlan,
   Charter,
@@ -26,7 +26,7 @@ const routes = (
   <HashRouter>
     <AppContainer>
       <Route exact={true} path="/" component={Home} />
-      <Route path="/about" component={About} />
+      <Route path="/about" component={AboutAsync} />
       <Switch>
         <Route path="/about/codergv" component={Codergv} />
         <Route path="/about/strategic-plan" component={StrategyPlan} />

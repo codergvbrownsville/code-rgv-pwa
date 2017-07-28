@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppContainer exists 1`] = `
+exports[`AppContainer snapshot 1`] = `
 <div>
   <nav
     className="navbar"

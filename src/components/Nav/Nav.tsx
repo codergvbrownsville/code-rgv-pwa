@@ -3,13 +3,18 @@
  */
 import * as React from "react";
 import { Link } from "react-router-dom";
+import * as bvilleLogo from "../../assets/bville_logo.png";
 
 export class Nav extends React.PureComponent {
   public render() {
     return (
-      <nav className="navbar">
+      <nav
+        className="navbar"
+        style={{ backgroundColor: "#f5f5f5", border: "1px solid #ffde49" }}
+      >
         <div className="navbar-brand">
           <a className="navbar-item">
+            <img src={bvilleLogo} alt="brownsville logo" />
             <span className="title is-4">
               <strong>CodeRGV</strong>
             </span>

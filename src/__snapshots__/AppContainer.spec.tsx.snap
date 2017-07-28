@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppContainer snapshot 1`] = `
+<div>
+  <nav
+    className="navbar"
+    style={
+      Object {
+        "backgroundColor": "#f5f5f5",
+        "border": "1px solid #ffde49",
+      }
+    }
+  >
+    <div
+      className="navbar-brand"
+    >
+      <a
+        className="navbar-item"
+      >
+        <img
+          alt="brownsville logo"
+          src="test-file-stub"
+        />
+        <span
+          className="title is-4"
+        >
+          <strong>
+            CodeRGV
+          </strong>
+        </span>
+      </a>
+      <div
+        className="navbar-burger"
+        data-target="codeRgvMenu"
+      >
+        <span />
+        <span />
+        <span />
+      </div>
+    </div>
+    <div
+      className="navbar-menu"
+      id="codeRgvMenu"
+    >
+      <div
+        className="navbar-start"
+      >
+        <a
+          className="navbar-item"
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+        <a
+          className="navbar-item"
+          href="/events"
+          onClick={[Function]}
+        >
+          Events
+        </a>
+        <a
+          className="navbar-item"
+          href="/projects"
+          onClick={[Function]}
+        >
+          Projects
+        </a>
+        <a
+          className="navbar-item"
+          href="/about"
+          onClick={[Function]}
+        >
+          About
+        </a>
+      </div>
+      <div
+        className="navbar-end"
+      >
+        <a
+          className="navbar-item"
+          href="https://github.com/codergvbrownsville"
+          rel="noopener noreferrer"
+          role="button"
+          target="_blank"
+        >
+          <i
+            className="fa fa-github"
+          />
+        </a>
+        <a
+          className="navbar-item"
+          href="https://www.facebook.com/codergvbrownsville/"
+          rel="noopener noreferrer"
+          role="button"
+          target="_blank"
+        >
+          <i
+            aria-hidden="true"
+            className="fa fa-facebook-square"
+          />
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    className="container"
+  />
+</div>
+`;

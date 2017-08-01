@@ -8,20 +8,10 @@ import * as React from "react";
 import { render } from "react-dom";
 import { Route } from "react-router";
 import { Provider } from "react-redux";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, Switch } from "react-router-dom";
 import { makeStore } from "./makeStore";
-import { AppContainer } from "./AppContainer";
-import { Home } from "./pages";
-
+import { routes } from "./routes";
 const store = makeStore();
-
-const routes = (
-  <HashRouter>
-    <AppContainer>
-      <Route exact={true} path="/" component={Home} />
-    </AppContainer>
-  </HashRouter>
-);
 
 render(
   <Provider store={store}>

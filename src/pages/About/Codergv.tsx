@@ -5,7 +5,7 @@ import * as React from "react";
 export class Codergv extends React.PureComponent {
   public render() {
     return (
-      <div>
+      <div className="container">
         <h1 className="title is-1" style={{ textAlign: "center" }}>
           About CodeRGV
         </h1>

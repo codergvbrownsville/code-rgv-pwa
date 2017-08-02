@@ -27,9 +27,7 @@ export class Nav extends React.PureComponent {
           </div>
         </div>
         <div className="navbar-menu" id="codeRgvMenu">
-          <div className="navbar-start">
-            <NavLinks />
-          </div>
+          <NavLinks />
           <div className="navbar-end">
             <a
               href="https://github.com/codergvbrownsville"

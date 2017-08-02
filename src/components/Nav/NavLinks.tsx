@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export class NavLinks extends React.PureComponent {
   public render() {
     return (
-      <div>
+      <div className="navbar-start">
         <Link to="/" className="navbar-item">
           Home
         </Link>
@@ -18,18 +18,18 @@ export class NavLinks extends React.PureComponent {
           Projects
         </Link>
         <div className="navbar-item has-dropdown is-hoverable">
-          <Link to="/about/who-we-are" className="navbar-link is-active">
+          <Link to="/about/about-us" className="navbar-link is-active">
             About
           </Link>
           <div className="navbar-dropdown">
-            <a
-              href=""
+            <Link
+              to="/about/about-us"
               className="navbar-item"
               role="button"
               rel="nooopener noreferrer"
             >
               About Us
-            </a>
+            </Link>
             <a
               href="https://github.com/CodeRGV/codeofconduct"
               className="navbar-item"
@@ -38,22 +38,22 @@ export class NavLinks extends React.PureComponent {
             >
               Code Of Conduct
             </a>
-            <a
-              href=""
+            <Link
+              to="/about/charter"
               className="navbar-item"
               role="button"
               rel="nooopener noreferrer"
             >
               Charter
-            </a>
-            <a
-              href=""
+            </Link>
+            <Link
+              to="/about/strategic-plan"
               className="navbar-item"
               role="button"
               rel="nooopener noreferrer"
             >
               Strategic Plan
-            </a>
+            </Link>
           </div>
         </div>
       </div>

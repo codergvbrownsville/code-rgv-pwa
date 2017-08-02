@@ -20,7 +20,7 @@ export const routes = (
       <Route exact={true} path="/" component={Home} />
       <Route path="/about" component={AboutAsync} />
       <Switch>
-        <Route path="/about/codergv" component={Codergv} />
+        <Route path="/about/who-we-are" component={Codergv} />
         <Route path="/about/strategic-plan" component={StrategyPlan} />
         <Route path="/about/charter" component={Charter} />
         <Route path="/about/code-of-conduct" component={CodeOfConduct} />

@@ -7,10 +7,10 @@ import * as codeRgvLogo from "../../assets/codergv_logo.jpg";
 
 export class Home extends React.Component {
   public render() {
-    const imgSize = {
+    const imgStyle = {
       display: "block",
       margin: "auto",
-      width: "60%"
+      width: "50%"
     };
     return (
       <div>
@@ -19,7 +19,7 @@ export class Home extends React.Component {
             className="center"
             src={codeRgvLogo}
             alt="Code RGV Logo"
-            style={imgSize}
+            style={imgStyle}
           />
         </figure>
       </div>

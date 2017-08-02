@@ -4,6 +4,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import * as bvilleLogo from "../../assets/bville_logo.png";
+import { NavLinks } from "./NavLinks";
 
 export class Nav extends React.PureComponent {
   public render() {
@@ -27,18 +28,7 @@ export class Nav extends React.PureComponent {
         </div>
         <div className="navbar-menu" id="codeRgvMenu">
           <div className="navbar-start">
-            <Link to="/" className="navbar-item">
-              Home
-            </Link>
-            <Link to="/events" className="navbar-item">
-              Events
-            </Link>
-            <Link to="/projects" className="navbar-item">
-              Projects
-            </Link>
-            <Link to="/about" className="navbar-item">
-              About
-            </Link>
+            <NavLinks />
           </div>
           <div className="navbar-end">
             <a
@@ -58,6 +48,15 @@ export class Nav extends React.PureComponent {
               rel="noopener noreferrer"
             >
               <i className="fa fa-facebook-square" aria-hidden="true" />
+            </a>
+            <a
+              href="#"
+              className="navbar-item"
+              target="_blank"
+              role="button"
+              rel="noopener noreferrer"
+            >
+              <i className="fa fa-slack" aria-hidden="true" />
             </a>
           </div>
         </div>

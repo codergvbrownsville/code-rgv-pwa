@@ -118,6 +118,7 @@
     "bulma": "0.4.4",
     "fp-ts": "0.4.0",
     "immutable": "3.8.1",
+    "partial.lenses": "11.14.1",
     "ramda": "0.24.1",
     "ramda-lens": "0.1.2",
     "react": "15.6.1",

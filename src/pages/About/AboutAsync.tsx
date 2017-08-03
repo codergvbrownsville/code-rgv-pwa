@@ -3,8 +3,9 @@
  */
 
 import * as React from "react";
+import { connect } from "react-redux";
 
-export class AboutAsync extends React.Component {
+export class AboutAsync extends React.Component<any, any> {
   private component: any;
 
   public componentWillMount() {
@@ -15,6 +16,8 @@ export class AboutAsync extends React.Component {
   }
 
   public render() {
-    return this.component ? <this.component.default /> : null;
+    return this.component
+      ? <this.component.default location={this.props.location.pathname} />
+      : null;
   }
 }

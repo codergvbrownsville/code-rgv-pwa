@@ -12,7 +12,7 @@ export class AppContainer extends React.Component<any, any> {
     return (
       <div>
         <Nav />
-        <div style={marginTop}>
+        <div>
           {this.props.children}
         </div>
       </div>

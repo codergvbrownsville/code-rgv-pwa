@@ -9,10 +9,7 @@ import { NavLinks } from "./NavLinks";
 export class Nav extends React.PureComponent {
   public render() {
     return (
-      <nav
-        className="navbar"
-        style={{ backgroundColor: "#f5f5f5", border: "1px solid #ffde49" }}
-      >
+      <nav className="navbar" style={{ border: "1px solid #ffaa00" }}>
         <div className="navbar-brand">
           <a className="navbar-item">
             <img src={bvilleLogo} alt="brownsville logo" />

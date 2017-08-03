@@ -30,14 +30,14 @@ export class NavLinks extends React.PureComponent {
             >
               About Us
             </Link>
-            <a
-              href="https://github.com/CodeRGV/codeofconduct"
+            <Link
+              to="/about/code-of-conduct"
               className="navbar-item"
               role="button"
               rel="nooopener noreferrer"
             >
               Code Of Conduct
-            </a>
+            </Link>
             <Link
               to="/about/charter"
               className="navbar-item"

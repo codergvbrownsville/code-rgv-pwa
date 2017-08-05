@@ -36,7 +36,7 @@ export default class About extends React.PureComponent<any, any> {
     return viewId(p) === viewId(c);
   }
 
-  public findIndex(list: List<any>, p: React.Props<any>) {
+  public findIndex(list: List<any>, p: React.Props<any>): number {
     return list.findIndex((a: Map<any, any>) => this.isSameId(a, fromJS(p)));
   }
 

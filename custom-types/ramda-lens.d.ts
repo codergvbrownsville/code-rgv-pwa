@@ -1,5 +1,5 @@
 //tslint:disable
-declare module "partial.lenses" {
+declare module "ramda-lens" {
   const value: any;
   export = value;
 }

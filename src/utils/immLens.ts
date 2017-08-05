@@ -2,7 +2,7 @@
  * Immutable lens
  * @param key string
  */
-import * as L from "partial.lenses";
+import * as L from "ramda-lens";
 import { Map } from "immutable";
 
 export const immLens = <T>(key: string) =>

@@ -6,8 +6,7 @@ exports[`AppContainer snapshot 1`] = `
     className="navbar"
     style={
       Object {
-        "backgroundColor": "#f5f5f5",
-        "border": "1px solid #ffde49",
+        "border": "1px solid #ffaa00",
       }
     }
   >
@@ -66,13 +65,57 @@ exports[`AppContainer snapshot 1`] = `
         >
           Projects
         </a>
-        <a
-          className="navbar-item"
-          href="/about"
-          onClick={[Function]}
+        <div
+          className="navbar-item has-dropdown is-hoverable"
         >
-          About
-        </a>
+          <a
+            className="navbar-link is-active"
+            href="/about/about-us"
+            onClick={[Function]}
+          >
+            About
+          </a>
+          <div
+            className="navbar-dropdown"
+          >
+            <a
+              className="navbar-item"
+              href="/about/about-us"
+              onClick={[Function]}
+              rel="nooopener noreferrer"
+              role="button"
+            >
+              About Us
+            </a>
+            <a
+              className="navbar-item"
+              href="/about/code-of-conduct"
+              onClick={[Function]}
+              rel="nooopener noreferrer"
+              role="button"
+            >
+              Code Of Conduct
+            </a>
+            <a
+              className="navbar-item"
+              href="/about/charter"
+              onClick={[Function]}
+              rel="nooopener noreferrer"
+              role="button"
+            >
+              Charter
+            </a>
+            <a
+              className="navbar-item"
+              href="/about/strategic-plan"
+              onClick={[Function]}
+              rel="nooopener noreferrer"
+              role="button"
+            >
+              Strategic Plan
+            </a>
+          </div>
+        </div>
       </div>
       <div
         className="navbar-end"
@@ -100,11 +143,21 @@ exports[`AppContainer snapshot 1`] = `
             className="fa fa-facebook-square"
           />
         </a>
+        <a
+          className="navbar-item"
+          href="#"
+          rel="noopener noreferrer"
+          role="button"
+          target="_blank"
+        >
+          <i
+            aria-hidden="true"
+            className="fa fa-slack"
+          />
+        </a>
       </div>
     </div>
   </nav>
-  <div
-    className="container"
-  />
+  <div />
 </div>
 `;

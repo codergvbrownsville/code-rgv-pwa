@@ -4,16 +4,16 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { fromJS, Map, List } from "immutable";
-import * as L from "partial.lenses";
+import * as L from "ramda-lens";
 import { immLens, log } from "../../utils";
 
 // tslint:disable-next-line:no-default-export
 export default class About extends React.PureComponent<any, any> {
-  public aboutHeaderTitle(): List<any> {
+  public titleWithLocation(): List<Map<string, string>> {
     return fromJS([
       {
         location: "/about/about-us",
-        title: "We Are CodeRgv"
+        title: "We Are CodeRGV"
       },
       {
         location: "/about/charter",
@@ -32,12 +32,19 @@ export default class About extends React.PureComponent<any, any> {
 
   public isSameId(p: Map<any, any>, c: Map<any, any>): boolean {
     const id = immLens("location");
-    const viewId = L.get(id);
+    const viewId = L.view(id);
     return viewId(p) === viewId(c);
   }
 
   public findIndex(list: List<any>, p: React.Props<any>) {
     return list.findIndex((a: Map<any, any>) => this.isSameId(a, fromJS(p)));
+  }
+
+  public headerTitle(): string {
+    return this.titleWithLocation().getIn([
+      this.findIndex(this.titleWithLocation(), this.props),
+      "title"
+    ]);
   }
 
   public render() {
@@ -52,10 +59,7 @@ export default class About extends React.PureComponent<any, any> {
           style={{ color: "#FFAA00", textAlign: "center", paddingTop: "70px" }}
           className="title is-1"
         >
-          {this.aboutHeaderTitle().getIn([
-            this.findIndex(this.aboutHeaderTitle(), this.props),
-            "title"
-          ])}
+          {this.headerTitle()}
         </h1>
       </div>
     );

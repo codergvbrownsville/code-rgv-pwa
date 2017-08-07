@@ -7,8 +7,8 @@ export class Codergv extends React.PureComponent {
     // tslint:disable-next-line:no-http-string
     const codeRgvUrl = "http://www.codergv.org/";
     return (
-      <div className="container has-text-centered">
-        <p className="subtitle is-3">
+      <div className="container">
+        <p className="subtitle is-3 has-text-centered">
           <strong>Code#RGV:Brownsville</strong> is a technology group in
           Brownsville part of
           <a

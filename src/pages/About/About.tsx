@@ -4,16 +4,18 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { fromJS, Map, List } from "immutable";
+import { map, tap, identity } from "ramda";
 import * as L from "ramda-lens";
 import { immLens, log } from "../../utils";
+import { Title, Header } from "../../components";
 
 // tslint:disable-next-line:no-default-export
 export default class About extends React.PureComponent<any, any> {
-  public titleWithLocation(): List<Map<string, string>> {
+  private titleWithLocation(): List<Map<string, string>> {
     return fromJS([
       {
         location: "/about/about-us",
-        title: "We Are CodeRGV"
+        title: "We Are CodeRGV:Brownsville"
       },
       {
         location: "/about/charter",
@@ -48,19 +50,11 @@ export default class About extends React.PureComponent<any, any> {
   }
 
   public render() {
-    const backgroundSlice = {
-      backgroundColor: "#00b3b3",
-      height: "200px",
-      marginBottom: "30px"
-    };
     return (
-      <div style={backgroundSlice}>
-        <h1
-          style={{ color: "#FFAA00", textAlign: "center", paddingTop: "70px" }}
-          className="title is-1"
-        >
-          {this.headerTitle()}
-        </h1>
+      <div>
+        {Header.map(map(title => Title.fold({ title })))
+          .run({ title: this.headerTitle() })
+          .fold()}
       </div>
     );
   }

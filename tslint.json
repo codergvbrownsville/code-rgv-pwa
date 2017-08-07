@@ -287,7 +287,7 @@
     "use-isnan": true,
     "use-named-parameter": true,
     "valid-typeof": true,
-    "variable-name": true,
+    "variable-name": false,
     "whitespace": [
       true,
       "check-branch",

@@ -3,7 +3,6 @@
  */
 import * as React from "react";
 import { v4 } from "uuid";
-import { map } from "ramda";
 import { Reader } from "ramda-fantasy";
 import { View } from "../View/View";
 

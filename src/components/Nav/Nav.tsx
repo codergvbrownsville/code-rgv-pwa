@@ -45,7 +45,7 @@ export class Nav extends React.PureComponent {
               <i className="fa fa-facebook-square" aria-hidden="true" />
             </a>
             <a
-              href="#"
+              href="https://codergv.herokuapp.com/"
               className="navbar-item"
               target="_blank"
               role="button"

@@ -8,7 +8,7 @@ export class Codergv extends React.PureComponent {
     const codeRgvUrl = "http://www.codergv.org/";
     return (
       <div className="container">
-        <p className="subtitle is-3 has-text-centered">
+        <p className="subtitle is-5 has-text-centered">
           <strong>Code#RGV:Brownsville</strong> is a technology group in
           Brownsville part of
           <a

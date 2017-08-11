@@ -150,7 +150,7 @@
     "no-missing-visibility-modifiers": true,
     "no-misused-new": true,
     "no-multiline-string": [
-      true
+      false
     ],
     "no-multiple-var-decl": true,
     "no-namespace": false,

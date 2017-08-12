@@ -3,6 +3,6 @@
  */
 import { TitleThree } from "../TitleThree/TitleThree";
 
-export const CharterTitle = TitleThree.fold({
+export const charter = {
   title: "Brownsville Committee Charter"
-});
+};

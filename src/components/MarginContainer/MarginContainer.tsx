@@ -5,11 +5,11 @@ import * as React from "react";
 import { Reader } from "ramda-fantasy";
 import { v4 } from "uuid";
 
-const marginEl = ({ marginBottom }: any) => (view: any) =>
+const marginEl = ({ margin }: any) => (view: any) =>
   view.map((element: any) =>
-    <div style={marginBottom}>
+    <div style={{ margin }} key={v4()}>
       {element}
     </div>
   );
 
-export const MarginBottom = Reader(marginEl);
+export const MarginContainer = Reader(marginEl);

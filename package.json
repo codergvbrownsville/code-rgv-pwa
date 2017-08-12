@@ -10,7 +10,7 @@
     "lint-fix": "tslint -c tslint.json --fix src/**/*.{ts,tsx} --type-check --project ./tsconfig.json",
     "clean": "gulp clean",
     "precommit": "lint-staged",
-    "prepush": "run-p build lint test",
+    "prepush": "run-p clean build lint test",
     "test": "jest",
     "postinstall": "npm run prepush"
   },

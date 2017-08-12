@@ -5,6 +5,10 @@ import * as React from "react";
 
 export class Charter extends React.PureComponent {
   public render() {
-    return <div>Charter</div>;
+    return (
+      <div className="container">
+        <h1 className="subtitle is-3 has-text-centered" />
+      </div>
+    );
   }
 }

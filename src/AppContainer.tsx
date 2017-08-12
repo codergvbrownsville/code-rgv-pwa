@@ -6,10 +6,13 @@ import { Nav } from "./components";
 
 export class AppContainer extends React.Component<any, any> {
   public render() {
+    const marginTop = {
+      marginTop: "10px"
+    };
     return (
       <div>
         <Nav />
-        <div className="container">
+        <div>
           {this.props.children}
         </div>
       </div>

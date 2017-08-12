@@ -2,4 +2,4 @@
  * Barrel File For Charter children components
  */
 
-export * from "./charterTitle";
+export * from "./charter";

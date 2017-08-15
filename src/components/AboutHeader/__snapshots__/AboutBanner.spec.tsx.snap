@@ -19,8 +19,6 @@ exports[`About Banner 1`] = `
         "textAlign": "center",
       }
     }
-  >
-    test
-  </h1>
+  />
 </div>
 `;

@@ -2,7 +2,7 @@
  * CoC First Paragraph
  */
 import { MarginContainer } from "../MarginContainer/MarginContainer";
-import { TitleThree } from "../TitleThree/TitleThree";
+import { HeaderThree } from "../Headers/HeaderThree";
 import { SubtitleFive } from "../SubtitleFive/SubtitleFive";
 
 const firstParagraph = {
@@ -20,7 +20,7 @@ const firstParagraph = {
   ]
 };
 
-export const FirstParagraphTitle = MarginContainer.ap(TitleThree)
+export const FirstParagraphTitle = MarginContainer.ap(HeaderThree)
   .run({
     title: firstParagraph.title,
     margin: "0 0 20px 0"

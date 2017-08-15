@@ -1,7 +1,7 @@
 /**
  * Charter Title
  */
-import { TitleThree } from "../TitleThree/TitleThree";
+import { HeaderThree } from "../Headers";
 
 export const charter = {
   title: "Brownsville Committee Charter"

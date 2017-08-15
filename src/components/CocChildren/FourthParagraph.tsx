@@ -2,8 +2,9 @@
  * CoC Fourth Paragraph
  */
 import { MarginContainer } from "../MarginContainer/MarginContainer";
-import { TitleThree } from "../TitleThree/TitleThree";
+import { HeaderThree } from "../Headers";
 import { SubtitleFive } from "../SubtitleFive/SubtitleFive";
+import { Anchor } from "../Anchor/Anchor";
 
 // tslint:disable-next-line:no-http-string
 const confCoCUrl = "http://confcodeofconduct.com/";
@@ -16,7 +17,7 @@ const fourthParagraph = {
   ]
 };
 
-export const FourthParagraphTitle = MarginContainer.ap(TitleThree)
+export const FourthParagraphTitle = MarginContainer.ap(HeaderThree)
   .run({
     title: fourthParagraph.title,
     margin: "0 0 20px 0"

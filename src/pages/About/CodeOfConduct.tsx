@@ -22,10 +22,13 @@ export class CodeOfConduct extends React.PureComponent {
         <div className="column is-mobile">
           {FirstParagraphTitle}
           {FirstParagraphBody}
+
           {SecondParagraphTitle}
           {SecondParagraphBody}
+
           {ThirdParagraphTitle}
           {ThirdParagraphBody}
+
           {FourthParagraphTitle}
           {FourthParagraphBody}
         </div>

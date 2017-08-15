@@ -5,6 +5,7 @@ import * as React from "react";
 import { v4 } from "uuid";
 import { Reader } from "ramda-fantasy";
 import { View } from "../View/View";
+import { tap } from "ramda";
 
 const backgroundSlice = {
   backgroundColor: "#00b3b3",
@@ -13,12 +14,9 @@ const backgroundSlice = {
   paddingTop: "70px"
 };
 
-const divEl = View(({ title }: any) =>
+const divEl = (t: any) =>
   <div key={v4()} style={backgroundSlice}>
-    {title}
-  </div>
-);
+    {t.title}
+  </div>;
 
-export const Header = Reader(({ title }: any) =>
-  divEl.contramap(() => ({ title }))
-);
+export const AboutBackgroundSlice = View(divEl);

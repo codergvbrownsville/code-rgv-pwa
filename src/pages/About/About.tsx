@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 import { fromJS, Map, List } from "immutable";
 import { map, tap, identity } from "ramda";
 import * as L from "ramda-lens";
+import * as R from "ramda";
 import { immLens, log } from "../../utils";
-import { Title, Header } from "../../components";
+import { AboutBanner } from "../../components";
 
 // tslint:disable-next-line:no-default-export
 export default class About extends React.PureComponent<any, any> {
@@ -52,9 +53,7 @@ export default class About extends React.PureComponent<any, any> {
   public render() {
     return (
       <div>
-        {Header.map(map(title => Title.fold({ title })))
-          .run({ title: this.headerTitle() })
-          .fold()}
+        {AboutBanner.fold({ text: this.headerTitle() })}
       </div>
     );
   }

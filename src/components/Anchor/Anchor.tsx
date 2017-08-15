@@ -6,12 +6,14 @@ import { v4 } from "uuid";
 import { Reader } from "ramda-fantasy";
 import { View } from "../View/View";
 
-const anchorEl = View(({ url, text }: any) =>
-  <a href={url} key={v4()}>
-    {text}
-  </a>
-);
+interface AnchorParam {
+  href: string;
+  anchorText: string;
+}
 
-export const Anchor = Reader(({ url, text }: any) =>
-  anchorEl.contramap(() => ({ url, text }))
-);
+const anchorEl = (a: AnchorParam) =>
+  <a href={a.href} key={v4()}>
+    {a.anchorText}
+  </a>;
+
+export const Anchor = View(anchorEl);

@@ -14,7 +14,7 @@ const backgroundSlice = {
   paddingTop: "70px"
 };
 
-const divEl = (t: any) =>
+const divEl = (t: { title: string }) =>
   <div key={v4()} style={backgroundSlice}>
     {t.title}
   </div>;

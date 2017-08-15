@@ -13,13 +13,13 @@ const titleStyle = {
   textAlign: "center"
 };
 
-const h1 = HeaderOne.contramap((t: any) => ({
-  text: t.text,
+const h1 = HeaderOne.contramap((t: { headerText: string }) => ({
+  headerText: t.headerText,
   style: titleStyle
 }));
 
-const background = AboutBackgroundSlice.contramap((t: any) => ({
-  title: h1.fold(t)
-}));
-
-export const AboutBanner = background;
+export const AboutBanner = AboutBackgroundSlice.contramap(
+  (t: { [key: string]: string }) => ({
+    title: h1.fold(t)
+  })
+);

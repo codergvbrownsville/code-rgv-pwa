@@ -10,6 +10,13 @@ import * as R from "ramda";
 import { immLens, log } from "../../utils";
 import { AboutBanner } from "../../components";
 
+interface LocationTitle extends Map<any, any> {
+  location: string;
+  title: string;
+}
+
+type PropsLocation = React.Props<{ location: string }>;
+
 // tslint:disable-next-line:no-default-export
 export default class About extends React.PureComponent<any, any> {
   private titleWithLocation(): List<Map<string, string>> {
@@ -33,17 +40,19 @@ export default class About extends React.PureComponent<any, any> {
     ]);
   }
 
-  public isSameId(p: Map<any, any>, c: Map<any, any>): boolean {
-    const id = immLens("location");
-    const viewId = L.view(id);
-    return viewId(p) === viewId(c);
+  private isSameLocation(p: LocationTitle, c: LocationTitle): boolean {
+    const location = immLens("location");
+    const viewLocation = L.view(location);
+    return viewLocation(p) === viewLocation(c);
   }
 
-  public findIndex(list: List<any>, p: React.Props<any>): number {
-    return list.findIndex((a: Map<any, any>) => this.isSameId(a, fromJS(p)));
+  private findIndex(list: List<any>, p: PropsLocation): number {
+    return list.findIndex((a: LocationTitle) =>
+      this.isSameLocation(a, fromJS(p))
+    );
   }
 
-  public headerTitle(): string {
+  private headerTitle(): string {
     return this.titleWithLocation().getIn([
       this.findIndex(this.titleWithLocation(), this.props),
       "title"
@@ -53,7 +62,7 @@ export default class About extends React.PureComponent<any, any> {
   public render() {
     return (
       <div>
-        {AboutBanner.fold({ text: this.headerTitle() })}
+        {AboutBanner.fold({ headerText: this.headerTitle() })}
       </div>
     );
   }

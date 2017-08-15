@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Banner 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#00b3b3",
+      "height": "200px",
+      "marginBottom": "30px",
+      "paddingTop": "70px",
+    }
+  }
+>
+  <h1
+    className="title is-1"
+    style={
+      Object {
+        "color": "#FFAA00",
+        "textAlign": "center",
+      }
+    }
+  >
+    test
+  </h1>
+</div>
+`;

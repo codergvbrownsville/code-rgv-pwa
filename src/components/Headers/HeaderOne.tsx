@@ -4,7 +4,7 @@
 
 import * as React from "react";
 import { v4 } from "uuid";
-import { View } from "../View/View";
+import { View } from "../View";
 
 interface HeaderParam {
   headerText: string;

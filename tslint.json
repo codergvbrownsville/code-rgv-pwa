@@ -39,7 +39,7 @@
       false
     ],
     "forin": true,
-    "function-name": true,
+    "function-name": false,
     "import-blacklist": false,
     "import-name": true,
     "import-spacing": true,

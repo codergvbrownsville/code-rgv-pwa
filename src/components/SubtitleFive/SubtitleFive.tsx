@@ -4,7 +4,7 @@
 import * as React from "react";
 import { v4 } from "uuid";
 import { Reader } from "ramda-fantasy";
-import { View } from "../View/View";
+import { View } from "../View";
 
 const subtitleEl = View(({ subtitle }: any) =>
   <p className="subtitle is-5" key={v4()}>

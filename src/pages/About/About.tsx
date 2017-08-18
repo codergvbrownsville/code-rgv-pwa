@@ -19,7 +19,7 @@ type PropsLocation = React.Props<{ location: string }>;
 
 // tslint:disable-next-line:no-default-export
 export default class About extends React.PureComponent<any, any> {
-  private titleWithLocation(): List<Map<string, string>> {
+  private titleWithLocation(): List<LocationTitle> {
     return fromJS([
       {
         location: "/about/about-us",

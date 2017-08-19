@@ -3,35 +3,39 @@
  */
 import * as React from "react";
 
-export const View: any = (g: any) => ({
-  fold: g,
-  contramap: (f: any) => View((x: any) => g(f(x))),
-  concat: (other: any) =>
-    View((x: any) =>
+export class View<T, U> {
+  public static of: <V, W>(u: W) => View<V, W> = of;
+
+  constructor(public readonly g: (a: T) => U) {}
+
+  public fold(t: T): U {
+    return this.g(t);
+  }
+
+  public of<T2, V>(v: V): View<T2, V> {
+    return of(v);
+  }
+
+  public map<V>(f: (u: U) => V): View<T, V> {
+    return new View((t: T) => f(this.fold(t)));
+  }
+
+  public contramap<V>(f: (a: T) => T): View<T, U> {
+    return new View((t: T) => this.fold(f(t)));
+  }
+
+  public concat(other: View<T, U>): View<T, JSX.Element> {
+    return new View((t: T) =>
       <div>
-        {g(x)} {other.fold(x)}
+        {this.fold(t)} {other.fold(t)}
       </div>
-    ),
-  map: (f: any) => View((x: any) => f(g(x)))
-});
-
-View.of = (x: any) => View(() => x);
-
-export interface Semigroup<A> {
-  concat(x: A): Semigroup<A>;
+    );
+  }
 }
 
-export interface Functor<T> {
-  map<U>(f: (t: T) => U): Functor<U>;
+export function of<T, U>(u: U): View<T, U> {
+  return new View((t: T) => u);
 }
 
-export interface Contravariant<A> {
-  contramap<B>(f: (b: B) => A): Contravariant<A>;
-}
-
-export interface Component<T>
-  extends Functor<T>,
-    Contravariant<T>,
-    Semigroup<T> {
-  fold(t: T): T;
-}
+// tslint:disable-next-line:export-name no-default-export
+export default Object.assign(View.prototype);

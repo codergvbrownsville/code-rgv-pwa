@@ -3,8 +3,7 @@
  */
 import * as React from "react";
 import { v4 } from "uuid";
-import { Reader } from "ramda-fantasy";
-import { View } from "../View";
+import { view } from "../View";
 import { tap } from "ramda";
 
 const backgroundSlice = {
@@ -19,4 +18,4 @@ const divEl = (t: { title: string }) =>
     {t.title}
   </div>;
 
-export const AboutBackgroundSlice = View(divEl);
+export const AboutBackgroundSlice = view(divEl);

@@ -8,7 +8,7 @@ import { AboutBackgroundSlice } from "./AboutBackgroundSlice";
 
 test("About Background slice", () => {
   const component = renderer.create(
-    AboutBackgroundSlice.fold({ t: { title: "test" } })
+    AboutBackgroundSlice.fold({ title: "test" })
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

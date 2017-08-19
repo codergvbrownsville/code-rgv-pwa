@@ -16,4 +16,4 @@ const anchorEl = (a: AnchorParam) =>
     {a.anchorText}
   </a>;
 
-export const Anchor = View(anchorEl);
+export const Anchor = View.of(anchorEl);

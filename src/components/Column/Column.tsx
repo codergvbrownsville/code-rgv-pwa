@@ -6,7 +6,7 @@ import { v4 } from "uuid";
 import { Reader } from "ramda-fantasy";
 import { View } from "../View";
 
-const columnEl = View(({ element }: any) =>
+const columnEl = View.of(({ element }: any) =>
   <div className="column is-mobile" key={v4()}>
     {element}
   </div>

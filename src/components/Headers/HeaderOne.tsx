@@ -16,4 +16,4 @@ const headerEl = (h: HeaderParam) =>
     {h.headerText}
   </h1>;
 
-export const HeaderOne = View(headerEl);
+export const HeaderOne = View.of(headerEl);

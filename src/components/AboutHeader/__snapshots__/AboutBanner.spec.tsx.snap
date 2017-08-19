@@ -10,15 +10,5 @@ exports[`About Banner 1`] = `
       "paddingTop": "70px",
     }
   }
->
-  <h1
-    className="title is-1"
-    style={
-      Object {
-        "color": "#FFAA00",
-        "textAlign": "center",
-      }
-    }
-  />
-</div>
+/>
 `;

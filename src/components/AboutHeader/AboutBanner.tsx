@@ -6,7 +6,6 @@ import { v4 } from "uuid";
 import { map } from "ramda";
 import { HeaderOne } from "../Headers";
 import { AboutBackgroundSlice } from "./AboutBackgroundSlice";
-import { tap } from "ramda";
 
 const titleStyle = {
   color: "#FFAA00",
@@ -19,7 +18,8 @@ const h1 = HeaderOne.contramap((t: { headerText: string }) => ({
 }));
 
 export const AboutBanner = AboutBackgroundSlice.contramap(
-  (t: { [key: string]: string }) => ({
-    title: h1.fold(t)
-  })
+  (t: any) =>
+    ({
+      title: h1.fold(t)
+    } as any)
 );

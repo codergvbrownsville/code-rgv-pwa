@@ -10,5 +10,7 @@ exports[`About Background slice 1`] = `
       "paddingTop": "70px",
     }
   }
-/>
+>
+  test
+</div>
 `;

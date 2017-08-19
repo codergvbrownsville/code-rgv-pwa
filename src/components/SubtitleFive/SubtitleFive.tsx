@@ -6,7 +6,7 @@ import { v4 } from "uuid";
 import { Reader } from "ramda-fantasy";
 import { View } from "../View";
 
-const subtitleEl = View(({ subtitle }: any) =>
+const subtitleEl = View.of(({ subtitle }: any) =>
   <p className="subtitle is-5" key={v4()}>
     {subtitle}
   </p>

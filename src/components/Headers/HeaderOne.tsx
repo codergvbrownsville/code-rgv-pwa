@@ -4,7 +4,6 @@
 
 import * as React from "react";
 import { v4 } from "uuid";
-import { View } from "../View";
 
 interface HeaderParam {
   headerText: string;
@@ -16,4 +15,4 @@ const headerEl = (h: HeaderParam) =>
     {h.headerText}
   </h1>;
 
-export const HeaderOne = View.of(headerEl);
+export const HeaderOne = undefined;

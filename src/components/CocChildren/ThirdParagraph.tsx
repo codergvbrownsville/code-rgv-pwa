@@ -1,10 +1,6 @@
 /**
  * CoC Third Paragraph
  */
-import { MarginContainer } from "../MarginContainer/MarginContainer";
-import { HeaderThree } from "../Headers";
-import { SubtitleFive } from "../SubtitleFive/SubtitleFive";
-
 const thirdParagraph = {
   title: "The Much Less Brief Version",
   body: [
@@ -37,13 +33,4 @@ const thirdParagraph = {
   ]
 };
 
-export const ThirdParagraphTitle = MarginContainer.ap(HeaderThree)
-  .run({
-    title: thirdParagraph.title,
-    margin: "0 0 20px 0"
-  })
-  .fold();
-
-export const ThirdParagraphBody = thirdParagraph.body.map((subtitle: string) =>
-  SubtitleFive.run({ subtitle }).fold()
-);
+export const ThirdParagraph = undefined;

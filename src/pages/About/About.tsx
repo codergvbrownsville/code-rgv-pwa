@@ -61,9 +61,8 @@ export default class About extends React.PureComponent<any, any> {
 
   public render() {
     return (
-      <div>
-        {AboutBanner.fold({ headerText: this.headerTitle() })}
-      </div>
+      //{AboutBanner.fold({ headerText: this.headerTitle() })}
+      <div />
     );
   }
 }

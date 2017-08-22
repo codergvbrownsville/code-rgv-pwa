@@ -1,10 +1,6 @@
 /**
  * CoC Second Paragraph
  */
-import { MarginContainer } from "../MarginContainer/MarginContainer";
-import { HeaderThree } from "../Headers";
-import { SubtitleFive } from "../SubtitleFive/SubtitleFive";
-
 const secondParagraph = {
   title: "The Brief Version",
   body: [
@@ -16,18 +12,9 @@ const secondParagraph = {
       of attendees in any form. Sexual language and imagery is not
       appropriate for any venue, including talks, workshops, parties,
       Twitter and other online media. Attendees violating this code may
-      be asked to leave at the discretion of the Norfolk.js organizers.
+      be asked to leave at the discretion of the CodeRGV organizers.
     `
   ]
 };
 
-export const SecondParagraphTitle = MarginContainer.ap(HeaderThree)
-  .run({
-    title: secondParagraph.title,
-    margin: "0 0 20px 0"
-  })
-  .fold();
-
-export const SecondParagraphBody = secondParagraph.body.map(
-  (subtitle: string) => SubtitleFive.run({ subtitle }).fold()
-);
+export const SecondParagraph = undefined;

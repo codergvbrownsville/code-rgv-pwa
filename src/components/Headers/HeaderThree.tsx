@@ -3,15 +3,14 @@
  */
 import * as React from "react";
 import { v4 } from "uuid";
-import { Reader } from "ramda-fantasy";
-import { View } from "../View";
 
-const headerEl = View.of(({ title }: any) =>
+type Title = {
+  title: string;
+};
+
+const headerEl = (t: Title) =>
   <h1 className="title is-3" key={v4()}>
-    {title}
-  </h1>
-);
+    {t.title}
+  </h1>;
 
-export const HeaderThree = Reader(({ title }: any) =>
-  headerEl.contramap(() => ({ title }))
-);
+export const HeaderThree = undefined;

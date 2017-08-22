@@ -1,9 +1,8 @@
 /**
  * CoC First Paragraph
  */
-import { MarginContainer } from "../MarginContainer/MarginContainer";
-import { HeaderThree } from "../Headers/HeaderThree";
-import { SubtitleFive } from "../SubtitleFive/SubtitleFive";
+import * as React from "react";
+import { v4 } from "uuid";
 
 const firstParagraph = {
   title: "CodeRGV: Brownsville",
@@ -20,13 +19,36 @@ const firstParagraph = {
   ]
 };
 
-export const FirstParagraphTitle = MarginContainer.ap(HeaderThree)
-  .run({
-    title: firstParagraph.title,
-    margin: "0 0 20px 0"
-  })
-  .fold();
+const Header = (h: { header: string }) =>
+  <h1 className="title is-3" key={v4()}>
+    {h.header}
+  </h1>;
 
-export const FirstParagraphBody = firstParagraph.body.map((subtitle: string) =>
-  SubtitleFive.run({ subtitle }).fold()
-);
+type IParagraph = {
+  paragraph: string[];
+};
+
+class Paragraph extends React.PureComponent<IParagraph> {
+  public render() {
+    return (
+      <div>
+        {this.props.paragraph.map((content: string) =>
+          <p className="subtitle is-5" key={v4()}>
+            {content}
+          </p>
+        )}
+      </div>
+    );
+  }
+}
+
+export class FirstParagraph extends React.PureComponent {
+  public render() {
+    return (
+      <div>
+        <Header header={firstParagraph.title} />
+        <Paragraph paragraph={firstParagraph.body} />
+      </div>
+    );
+  }
+}

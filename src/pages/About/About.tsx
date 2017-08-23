@@ -3,22 +3,24 @@
  */
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { fromJS, Map, List } from "immutable";
+import { fromJS, Map, List, Record } from "immutable";
 import { map, tap, identity } from "ramda";
 import * as L from "ramda-lens";
 import * as R from "ramda";
 import { immLens, log } from "../../utils";
 import { AboutBanner, BackgroundSlice } from "../../components";
 
-interface LocationTitle extends Map<any, any> {
+interface LocationTitle extends Map<string, string> {
   location: string;
   title: string;
 }
 
-type PropsLocation = React.Props<{ location: string }>;
+type PropsLocation = {
+  location: string;
+};
 
 // tslint:disable-next-line:no-default-export
-export default class About extends React.PureComponent<any, any> {
+export default class About extends React.PureComponent<PropsLocation, {}> {
   private titleWithLocation(): List<LocationTitle> {
     return fromJS([
       {

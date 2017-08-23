@@ -6,20 +6,19 @@ import {
   FirstParagraph,
   SecondParagraph,
   ThirdParagraph,
-  FourthParagraph
+  FourthParagraph,
+  Container
 } from "../../components";
 
 export class CodeOfConduct extends React.PureComponent {
   public render() {
     return (
-      <div className="container">
-        <div className="column is-mobile">
-          <FirstParagraph />
-          <SecondParagraph />
-          <ThirdParagraph />
-          <FourthParagraph />
-        </div>
-      </div>
+      <Container>
+        <FirstParagraph />
+        <SecondParagraph />
+        <ThirdParagraph />
+        <FourthParagraph />
+      </Container>
     );
   }
 }

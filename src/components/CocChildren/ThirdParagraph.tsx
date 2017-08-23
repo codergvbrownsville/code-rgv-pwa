@@ -4,6 +4,7 @@
 import * as React from "react";
 import { Header } from "./Header";
 import { Paragraph } from "./Paragraph";
+import { MarginBottom } from "./MarginBottom";
 
 const thirdParagraph = {
   title: "The Much Less Brief Version",
@@ -40,10 +41,10 @@ const thirdParagraph = {
 export class ThirdParagraph extends React.PureComponent {
   public render() {
     return (
-      <div>
+      <MarginBottom>
         <Header header={thirdParagraph.title} />
         <Paragraph paragraph={thirdParagraph.body} />
-      </div>
+      </MarginBottom>
     );
   }
 }

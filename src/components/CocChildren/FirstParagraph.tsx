@@ -4,6 +4,7 @@
 import * as React from "react";
 import { Header } from "./Header";
 import { Paragraph } from "./Paragraph";
+import { MarginBottom } from "./MarginBottom";
 
 const firstParagraph = {
   title: "CodeRGV: Brownsville",
@@ -23,10 +24,10 @@ const firstParagraph = {
 export class FirstParagraph extends React.PureComponent {
   public render() {
     return (
-      <div>
+      <MarginBottom>
         <Header header={firstParagraph.title} />
         <Paragraph paragraph={firstParagraph.body} />
-      </div>
+      </MarginBottom>
     );
   }
 }

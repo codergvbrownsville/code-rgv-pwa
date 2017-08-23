@@ -12,7 +12,7 @@ type IHeader = {
 export class Header extends React.PureComponent<IHeader> {
   public render() {
     return (
-      <h1 className="title is-3" key={v4()}>
+      <h1 className="title is-3">
         {this.props.header}
       </h1>
     );

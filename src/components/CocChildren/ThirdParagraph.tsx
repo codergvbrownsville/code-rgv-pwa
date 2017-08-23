@@ -1,9 +1,9 @@
 /**
  * CoC Third Paragraph
  */
-import { MarginContainer } from "../MarginContainer/MarginContainer";
-import { TitleThree } from "../TitleThree/TitleThree";
-import { SubtitleFive } from "../SubtitleFive/SubtitleFive";
+import * as React from "react";
+import { Header } from "./Header";
+import { Paragraph } from "./Paragraph";
 
 const thirdParagraph = {
   title: "The Much Less Brief Version",
@@ -37,13 +37,13 @@ const thirdParagraph = {
   ]
 };
 
-export const ThirdParagraphTitle = MarginContainer.ap(TitleThree)
-  .run({
-    title: thirdParagraph.title,
-    margin: "0 0 20px 0"
-  })
-  .fold();
-
-export const ThirdParagraphBody = thirdParagraph.body.map((subtitle: string) =>
-  SubtitleFive.run({ subtitle }).fold()
-);
+export class ThirdParagraph extends React.PureComponent {
+  public render() {
+    return (
+      <div>
+        <Header header={thirdParagraph.title} />
+        <Paragraph paragraph={thirdParagraph.body} />
+      </div>
+    );
+  }
+}

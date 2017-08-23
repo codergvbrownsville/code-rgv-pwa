@@ -39,7 +39,7 @@
       false
     ],
     "forin": true,
-    "function-name": true,
+    "function-name": false,
     "import-blacklist": false,
     "import-name": true,
     "import-spacing": true,
@@ -161,7 +161,7 @@
     "no-reference-import": true,
     "no-regex-spaces": true,
     "no-require-imports": true,
-    "no-reserved-keywords": true,
+    "no-reserved-keywords": false,
     "no-shadowed-variable": true,
     "no-single-line-block-comment": true,
     "no-sparse-arrays": true,

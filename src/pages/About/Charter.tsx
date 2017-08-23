@@ -2,13 +2,28 @@
  * Charter sub route
  */
 import * as React from "react";
+import {
+  Container,
+  CharterTitle,
+  CharterFirst,
+  CharterSecond,
+  CharterThird,
+  CharterFourth,
+  CharterFifth,
+  CharterSixth
+} from "../../components";
 
 export class Charter extends React.PureComponent {
   public render() {
     return (
-      <div className="container">
-        <h1 className="subtitle is-3 has-text-centered" />
-      </div>
+      <Container>
+        <CharterTitle />
+        <CharterFirst />
+        <CharterSecond />
+        <CharterThird />
+        <CharterFourth />
+        <CharterSixth />
+      </Container>
     );
   }
 }

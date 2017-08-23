@@ -3,15 +3,25 @@
  */
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { fromJS, Map, List } from "immutable";
+import { fromJS, Map, List, Record } from "immutable";
 import { map, tap, identity } from "ramda";
 import * as L from "ramda-lens";
+import * as R from "ramda";
 import { immLens, log } from "../../utils";
-import { Title, Header } from "../../components";
+import { AboutBanner, BackgroundSlice } from "../../components";
+
+interface LocationTitle extends Map<string, string> {
+  location: string;
+  title: string;
+}
+
+type PropsLocation = {
+  location: string;
+};
 
 // tslint:disable-next-line:no-default-export
-export default class About extends React.PureComponent<any, any> {
-  private titleWithLocation(): List<Map<string, string>> {
+export default class About extends React.PureComponent<PropsLocation, {}> {
+  private titleWithLocation(): List<LocationTitle> {
     return fromJS([
       {
         location: "/about/about-us",
@@ -32,30 +42,31 @@ export default class About extends React.PureComponent<any, any> {
     ]);
   }
 
-  public isSameId(p: Map<any, any>, c: Map<any, any>): boolean {
-    const id = immLens("location");
-    const viewId = L.view(id);
-    return viewId(p) === viewId(c);
+  private isSameLocation(p: LocationTitle, c: LocationTitle): boolean {
+    const location = immLens("location");
+    const viewLocation = L.view(location);
+    return viewLocation(p) === viewLocation(c);
   }
 
-  public findIndex(list: List<any>, p: React.Props<any>): number {
-    return list.findIndex((a: Map<any, any>) => this.isSameId(a, fromJS(p)));
+  private findIndex(list: List<any>, p: PropsLocation): number {
+    return list.findIndex((a: LocationTitle) =>
+      this.isSameLocation(a, fromJS(p))
+    );
   }
 
-  public headerTitle(): string {
+  private headerTitle(): string {
     return this.titleWithLocation().getIn([
       this.findIndex(this.titleWithLocation(), this.props),
       "title"
     ]);
   }
-
   public render() {
     return (
-      <div>
-        {Header.map(map(title => Title.fold({ title })))
-          .run({ title: this.headerTitle() })
-          .fold()}
-      </div>
+      <BackgroundSlice>
+        <AboutBanner>
+          {this.headerTitle()}
+        </AboutBanner>
+      </BackgroundSlice>
     );
   }
 }

@@ -1,6 +1,10 @@
 /**
  * CoC Third Paragraph
  */
+import * as React from "react";
+import { Header } from "./Header";
+import { Paragraph } from "./Paragraph";
+
 const thirdParagraph = {
   title: "The Much Less Brief Version",
   body: [
@@ -33,4 +37,13 @@ const thirdParagraph = {
   ]
 };
 
-export const ThirdParagraph = undefined;
+export class ThirdParagraph extends React.PureComponent {
+  public render() {
+    return (
+      <div>
+        <Header header={thirdParagraph.title} />
+        <Paragraph paragraph={thirdParagraph.body} />
+      </div>
+    );
+  }
+}

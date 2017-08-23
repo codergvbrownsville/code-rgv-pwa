@@ -8,7 +8,7 @@ import { map, tap, identity } from "ramda";
 import * as L from "ramda-lens";
 import * as R from "ramda";
 import { immLens, log } from "../../utils";
-import { AboutBanner } from "../../components";
+import { AboutBanner, BackgroundSlice } from "../../components";
 
 interface LocationTitle extends Map<any, any> {
   location: string;
@@ -58,11 +58,13 @@ export default class About extends React.PureComponent<any, any> {
       "title"
     ]);
   }
-
   public render() {
     return (
-      //{AboutBanner.fold({ headerText: this.headerTitle() })}
-      <div />
+      <BackgroundSlice>
+        <AboutBanner>
+          {this.headerTitle()}
+        </AboutBanner>
+      </BackgroundSlice>
     );
   }
 }

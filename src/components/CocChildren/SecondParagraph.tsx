@@ -1,6 +1,10 @@
 /**
  * CoC Second Paragraph
  */
+import * as React from "react";
+import { Header } from "./Header";
+import { Paragraph } from "./Paragraph";
+
 const secondParagraph = {
   title: "The Brief Version",
   body: [
@@ -17,4 +21,13 @@ const secondParagraph = {
   ]
 };
 
-export const SecondParagraph = undefined;
+export class SecondParagraph extends React.PureComponent {
+  public render() {
+    return (
+      <div>
+        <Header header={secondParagraph.title} />
+        <Paragraph paragraph={secondParagraph.body} />
+      </div>
+    );
+  }
+}

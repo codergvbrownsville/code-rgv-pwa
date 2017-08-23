@@ -11,4 +11,12 @@ const backgroundSlice = {
   paddingTop: "70px"
 };
 
-export const AboutBackgroundSlice = undefined;
+export class BackgroundSlice extends React.PureComponent {
+  public render() {
+    return (
+      <div style={backgroundSlice}>
+        {this.props.children}
+      </div>
+    );
+  }
+}

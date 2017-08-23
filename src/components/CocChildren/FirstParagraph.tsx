@@ -2,7 +2,8 @@
  * CoC First Paragraph
  */
 import * as React from "react";
-import { v4 } from "uuid";
+import { Header } from "./Header";
+import { Paragraph } from "./Paragraph";
 
 const firstParagraph = {
   title: "CodeRGV: Brownsville",
@@ -18,29 +19,6 @@ const firstParagraph = {
     `
   ]
 };
-
-const Header = (h: { header: string }) =>
-  <h1 className="title is-3" key={v4()}>
-    {h.header}
-  </h1>;
-
-type IParagraph = {
-  paragraph: string[];
-};
-
-class Paragraph extends React.PureComponent<IParagraph> {
-  public render() {
-    return (
-      <div>
-        {this.props.paragraph.map((content: string) =>
-          <p className="subtitle is-5" key={v4()}>
-            {content}
-          </p>
-        )}
-      </div>
-    );
-  }
-}
 
 export class FirstParagraph extends React.PureComponent {
   public render() {

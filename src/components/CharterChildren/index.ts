@@ -9,3 +9,4 @@ export * from "./CharterFourth";
 export * from "./CharterFifth";
 export * from "./CharterSixth";
 export * from "./CharterProgram";
+export * from "./Responsibility";

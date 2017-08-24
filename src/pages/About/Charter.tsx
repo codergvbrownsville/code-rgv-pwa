@@ -11,7 +11,8 @@ import {
   CharterFourth,
   CharterFifth,
   CharterSixth,
-  CharterProgram
+  CharterProgram,
+  Responsibility
 } from "../../components";
 
 export class Charter extends React.PureComponent {
@@ -25,6 +26,7 @@ export class Charter extends React.PureComponent {
         <CharterFourth />
         <CharterSixth />
         <CharterProgram />
+        <Responsibility />
       </Container>
     );
   }

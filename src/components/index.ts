@@ -8,3 +8,4 @@ export * from "./CocChildren/CocChildren";
 export * from "./CharterChildren";
 export * from "./Container/Container";
 export * from "./AboutUs/AboutUs";
+export * from "./StrategicPlan";

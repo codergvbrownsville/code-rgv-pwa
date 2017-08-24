@@ -4,6 +4,8 @@
 import * as React from "react";
 import { v4 } from "uuid";
 import { responsibilities } from "./responsibilities";
+import { List } from "../List";
+import { Content } from "../Content";
 
 type Children<T> = {
   children: T;
@@ -19,17 +21,7 @@ class Title extends React.PureComponent<Children<string>> {
   }
 }
 
-class List extends React.PureComponent<Children<JSX.Element>> {
-  public render() {
-    return (
-      <ul>
-        {this.props.children}
-      </ul>
-    );
-  }
-}
-
-class Items extends React.PureComponent<Children<string[]>> {
+class StringItems extends React.PureComponent<Children<string[]>> {
   public render() {
     return (
       <span>
@@ -51,18 +43,18 @@ class ResponsibilityItems extends React.PureComponent<ItemsProp> {
   public render() {
     return (
       <List>
-        <Items>
+        <StringItems>
           {this.props.items}
-        </Items>
+        </StringItems>
       </List>
     );
   }
 }
 
-class Content extends React.PureComponent {
+class MarginTop extends React.PureComponent<Children<JSX.Element>> {
   public render() {
     return (
-      <div className="content" style={{ marginTop: "30px" }}>
+      <div style={{ marginTop: "30" }}>
         {this.props.children}
       </div>
     );
@@ -72,10 +64,12 @@ class Content extends React.PureComponent {
 export class Responsibility extends React.PureComponent {
   public render() {
     return (
-      <Content>
-        <Title>Committee Responsibility</Title>
-        <ResponsibilityItems items={responsibilities} />
-      </Content>
+      <MarginTop>
+        <Content>
+          <Title>Committee Responsibility</Title>
+          <ResponsibilityItems items={responsibilities} />
+        </Content>
+      </MarginTop>
     );
   }
 }

@@ -38,9 +38,13 @@ class DisplayDate extends React.PureComponent<Children<string>> {
   }
 }
 
+type Style = {
+  [key: string]: string;
+};
+
 class Title extends React.PureComponent<Children<string>> {
   public render() {
-    const fontStyle: { [key: string]: string } = {
+    const fontStyle: Style = {
       color: "#a6a6a6",
       fontWeight: "bold"
     };

@@ -6,9 +6,11 @@ import * as React from "react";
 export class Container extends React.PureComponent {
   public render() {
     return (
-      <div className="container">
-        {this.props.children}
-      </div>
+      <section className="section">
+        <div className="container">
+          {this.props.children}
+        </div>
+      </section>
     );
   }
 }

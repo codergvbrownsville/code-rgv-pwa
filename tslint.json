@@ -75,7 +75,6 @@
       true,
       140
     ],
-    "max-len": 100,
     "member-access": true,
     "member-ordering": [
       false

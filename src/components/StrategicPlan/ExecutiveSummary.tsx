@@ -5,10 +5,11 @@ import * as React from "react";
 import { Container } from "../Container/Container";
 import { List } from "../List";
 import { Content } from "../Content";
+import { Title } from "./Title";
 
-type Children<T> = {
+interface Children<T> {
   children: T;
-};
+}
 
 class HeaderRed extends React.PureComponent<Children<string>> {
   public render() {
@@ -32,27 +33,6 @@ class DisplayDate extends React.PureComponent<Children<string>> {
           <strong>
             {this.props.children}
           </strong>
-        </span>
-      </h1>
-    );
-  }
-}
-
-type Style = {
-  [key: string]: string;
-};
-
-class Title extends React.PureComponent<Children<string>> {
-  public render() {
-    const fontStyle: Style = {
-      color: "#a6a6a6",
-      fontWeight: "bold"
-    };
-
-    return (
-      <h1 className="title is-4">
-        <span style={fontStyle}>
-          {this.props.children}
         </span>
       </h1>
     );
@@ -86,7 +66,7 @@ class Answer extends React.PureComponent<Children<string>> {
 export class ExecutiveSummary extends React.PureComponent {
   public render() {
     return (
-      <Container>
+      <span>
         <HeaderRed>Code#RGV Brownsville: Brigade Strategic Plan</HeaderRed>
         <DisplayDate>February, 2017</DisplayDate>
         <Title>Executive Summary</Title>
@@ -116,7 +96,7 @@ export class ExecutiveSummary extends React.PureComponent {
             </Answer>
           </Question>
         </Content>
-      </Container>
+      </span>
     );
   }
 }

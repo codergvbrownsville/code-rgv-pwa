@@ -3,3 +3,4 @@
  */
 
 export * from "./ExecutiveSummary";
+export * from "./StrategyQandA";

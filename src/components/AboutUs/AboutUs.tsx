@@ -3,7 +3,11 @@
  */
 import * as React from "react";
 
-class Paragraph extends React.Component {
+interface Children<T> {
+  children: T;
+}
+
+class Paragraph extends React.Component<Children<(string | JSX.Element)[]>> {
   public render() {
     return (
       <p className="subtitle is-5">

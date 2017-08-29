@@ -2,10 +2,15 @@
  * Strategy Plan sub route
  */
 import * as React from "react";
-import { ExecutiveSummary } from "../../components";
+import { ExecutiveSummary, StrategyQandA, Container } from "../../components";
 
 export class StrategyPlan extends React.PureComponent {
   public render() {
-    return <ExecutiveSummary />;
+    return (
+      <Container>
+        <ExecutiveSummary />
+        <StrategyQandA />
+      </Container>
+    );
   }
 }

@@ -3,13 +3,12 @@
  */
 import * as React from "react";
 import { v4 } from "uuid";
-import { responsibilities } from "./responsibilities";
 import { List } from "../List";
 import { Content } from "../Content";
 
-type Children<T> = {
+interface Children<T> {
   children: T;
-};
+}
 
 class Title extends React.PureComponent<Children<string>> {
   public render() {
@@ -24,7 +23,7 @@ class Title extends React.PureComponent<Children<string>> {
 class Responsibilities extends React.PureComponent<
   Children<(string | JSX.Element)[]>
 > {
-  public return() {
+  public render() {
     return (
       <ul>
         {this.props.children}
@@ -46,7 +45,7 @@ class Item extends React.PureComponent<Children<string>> {
 class MarginTop extends React.PureComponent<Children<JSX.Element>> {
   public render() {
     return (
-      <div style={{ marginTop: "30" }}>
+      <div style={{ marginTop: "30px" }}>
         {this.props.children}
       </div>
     );

@@ -31,8 +31,7 @@ class Subtitle extends React.PureComponent<Children<string>> {
 
 export class StrategyQandA extends React.PureComponent {
   public render() {
-    const strategicPlanDoc = `https://docs.google.com/document/d/
-    1TyuSg61mH8ttA8mTTyj8BxZ-n4OP_jfLz6gHsSAm_ug/edit#`;
+    const strategicPlanDoc = `https://docs.google.com/document/d/1TyuSg61mH8ttA8mTTyj8BxZ-n4OP_jfLz6gHsSAm_ug/edit?usp=sharing`;
 
     return (
       <MarginTop>

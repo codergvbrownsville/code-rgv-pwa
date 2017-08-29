@@ -2,7 +2,7 @@
  * About Title Component
  */
 import * as React from "react";
-import { BackgroundSlice } from "./BackgroundSlice";
+import { BackgroundSlice } from "../BackgroundSlice/BackgroundSlice";
 import { v4 } from "uuid";
 
 const titleStyle = {

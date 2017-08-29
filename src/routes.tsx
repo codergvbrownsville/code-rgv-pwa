@@ -10,7 +10,8 @@ import {
   Codergv,
   StrategyPlan,
   Charter,
-  CodeOfConduct
+  CodeOfConduct,
+  Events
 } from "./pages";
 import { AppContainer } from "./AppContainer";
 
@@ -18,6 +19,7 @@ export const routes = (
   <HashRouter>
     <AppContainer>
       <Route exact={true} path="/" component={Home} />
+      <Route path="/events" component={Events} />
       <Route path="/about" component={AboutAsync} />
       <Switch>
         <Route path="/about/about-us" component={Codergv} />

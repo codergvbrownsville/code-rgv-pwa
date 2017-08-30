@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start" : "node ./server/server.js",
     "build": "NODE_ENV=production webpack --config ./webpack.config.ts",
     "build-dev": "NODE_ENV=development webpack-dev-server --config ./webpack.config.ts --progress",
     "lint": "tslint -c tslint.json src/**/*.{ts,tsx} --type-check --project ./tsconfig.json",
@@ -117,6 +118,7 @@
   },
   "dependencies": {
     "bulma": "0.4.4",
+    "express": "^4.15.4",
     "immutable": "3.8.1",
     "ramda": "0.24.1",
     "ramda-fantasy": "0.8.0",

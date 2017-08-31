@@ -1,10 +1,9 @@
 /**
- * Lazy loaded about page
+ * Lazy loaded projects page
  */
-
 import * as React from "react";
 import { connect } from "react-redux";
-import About from "./About";
+import Projects from "./Projects";
 
 type Props = {
   location: {
@@ -13,14 +12,14 @@ type Props = {
 };
 
 type Component = {
-  default(): About;
+  default(): Projects;
 };
 
-export class AboutAsync extends React.Component<Props> {
+export class ProjectsAsync extends React.Component<Props> {
   private component: Component;
 
   public componentWillMount() {
-    System.import("./About").then(component => {
+    System.import("./Projects").then(component => {
       this.component = component;
       this.forceUpdate();
     });

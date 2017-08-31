@@ -1,10 +1,8 @@
 /**
- * Lazy loaded about page
+ * Lazy loaded events page
  */
-
 import * as React from "react";
-import { connect } from "react-redux";
-import About from "./About";
+import Events from "./Events";
 
 type Props = {
   location: {
@@ -13,14 +11,14 @@ type Props = {
 };
 
 type Component = {
-  default(): About;
+  default(): Events;
 };
 
-export class AboutAsync extends React.Component<Props> {
+export class EventsAsync extends React.Component<Props> {
   private component: Component;
 
   public componentWillMount() {
-    System.import("./About").then(component => {
+    System.import("./Events").then(component => {
       this.component = component;
       this.forceUpdate();
     });

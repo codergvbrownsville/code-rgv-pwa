@@ -17,7 +17,11 @@ class HomeBackground extends React.Component {
   }
 }
 
-export class Home extends React.Component {
+type Props = {
+  location: string;
+};
+
+export default class Home extends React.Component<Props> {
   public render() {
     const imgStyle = {
       display: "block",

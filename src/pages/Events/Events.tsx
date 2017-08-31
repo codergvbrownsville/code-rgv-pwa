@@ -3,7 +3,12 @@
  */
 import * as React from "react";
 import { Agenda, BackgroundSlice } from "../../components";
-export class Events extends React.Component {
+
+type Props = {
+  location: string;
+};
+
+export default class Events extends React.Component<Props> {
   public render() {
     return (
       <BackgroundSlice>

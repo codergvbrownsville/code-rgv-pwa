@@ -6,20 +6,22 @@ import { HashRouter, Switch } from "react-router-dom";
 import { Route } from "react-router";
 import {
   AboutAsync,
-  Home,
+  HomeAsync,
   Codergv,
   StrategyPlan,
   Charter,
   CodeOfConduct,
-  Events
+  EventsAsync,
+  ProjectsAsync
 } from "./pages";
 import { AppContainer } from "./AppContainer";
 
 export const routes = (
   <HashRouter>
     <AppContainer>
-      <Route exact={true} path="/" component={Home} />
-      <Route path="/events" component={Events} />
+      <Route exact={true} path="/" component={HomeAsync} />
+      <Route path="/events" component={EventsAsync} />
+      <Route path="/projects" component={ProjectsAsync} />
       <Route path="/about" component={AboutAsync} />
       <Switch>
         <Route path="/about/about-us" component={Codergv} />

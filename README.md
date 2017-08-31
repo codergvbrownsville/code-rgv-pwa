@@ -6,4 +6,4 @@ Web application for the organization by the organization.
 
 # Documentation
 * [Code Of Conduct](https://github.com/codergvbrownsville/code-rgv-pwa/blob/master/CODE_OF_CONDUCT.md)
-* [Installation](https://github.com/codergvbrownsville/code-rgv-pwa/blob/master/docs/Installation.md)
+* [Running &amp; Installing the project](https://github.com/codergvbrownsville/code-rgv-pwa/blob/master/docs/Installation.md)

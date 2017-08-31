@@ -22,4 +22,5 @@ If there are no errors after the intallation and tests have ran. Run the project
 ```
 npm run build-dev
 ```
-This will run the project in `development` mode.
+This will run the project in `development` mode. If there no errors, head on to your 
+browser and go to localhost:8080

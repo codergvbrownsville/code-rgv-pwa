@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./server/server.ts",
-    "build": "NODE_ENV=production webpack --config ./webpack.config.ts",
-    "build-dev": "NODE_ENV=development webpack-dev-server --config ./webpack.config.ts --progress",
+    "serve-dev": "webpack-dev-server --config ./webpack.config.ts --progress",
+    "serve-prod": "npm run build-prod && NODE_ENV=production ts-node ./server/server.ts",
+    "build-prod": "NODE_ENV=production webpack --config ./webpack.config.ts",
     "lint": "tslint -c tslint.json src/**/*.{ts,tsx} --type-check --project ./tsconfig.json",
     "lint-fix": "tslint -c tslint.json --fix src/**/*.{ts,tsx} --type-check --project ./tsconfig.json",
     "clean": "gulp clean",
     "precommit": "lint-staged",
-    "prepush": "run-p clean build lint test",
+    "prepush": "run-p clean build-prod lint test",
     "test": "jest",
     "postinstall": "npm run prepush"
   },

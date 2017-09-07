@@ -145,7 +145,7 @@
     "no-invalid-template-strings": true,
     "no-invalid-this": true,
     "no-jquery-raw-elements": true,
-    "no-magic-numbers": false,
+    "no-magic-numbers": [false],
     "no-mergeable-namespace": false,
     "no-missing-visibility-modifiers": true,
     "no-misused-new": true,

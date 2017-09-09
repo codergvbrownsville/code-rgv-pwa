@@ -42,10 +42,6 @@ export const modules = {
       test: /\.css$/
     },
     {
-      loader: "json-loader",
-      test: /\.json$/
-    },
-    {
       loader: ExtractTextPlugin.extract({
         fallback: "style-loader",
         use: ["css-loader", "sass-loader"]

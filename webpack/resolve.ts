@@ -2,5 +2,5 @@
  * Webpack resolve configuration
  */
 export const resolve = {
-  extensions: [".tsx", ".ts", ".js", ".html", ".css"]
+  extensions: [".tsx", ".ts", ".js", ".html", ".css", ".json"]
 };

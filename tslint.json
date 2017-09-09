@@ -41,7 +41,7 @@
     "forin": true,
     "function-name": false,
     "import-blacklist": false,
-    "import-name": true,
+    "import-name": false,
     "import-spacing": true,
     "indent": [
       true,
@@ -53,6 +53,7 @@
     "jquery-deferred-must-complete": true,
     "jsdoc-format": false,
     "jsx-wrap-multiline": false,
+    "jsx-boolean-value": false,
     "label-position": true,
     "linebreak-style": [
       true,
@@ -66,7 +67,7 @@
     ],
     "max-func-body-length": [
       true,
-      100,
+      200,
       {
         "ignore-parameters-to-function-regex": "describe"
       }

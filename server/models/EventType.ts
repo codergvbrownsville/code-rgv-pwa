@@ -12,7 +12,10 @@ export const EventType = new GraphQLObjectType({
     eventName: { type: GraphQLString },
     eventGits: { type: GraphQLString },
     eventFbLink: { type: GraphQLString },
-    eventinfo: { type: GraphQLString },
-    speakerNames: { type: new GraphQLList(GraphQLString) }
+    eventInfo: { type: GraphQLString },
+    speakerNames: { type: new GraphQLList(GraphQLString) },
+    eventVideos: { type: GraphQLString },
+    eventDate: { type: GraphQLString },
+    eventSlides: { type: GraphQLString }
   })
 });

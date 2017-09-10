@@ -24,7 +24,7 @@ WORKDIR /data
 
 COPY events.json /data/events.json
 
-CMD mongod
+CMD ["mongod"]
 
 # Expose ports.
 #   - 27017: process

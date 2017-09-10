@@ -24,7 +24,10 @@ const Query = new GraphQLObjectType({
         eventGits: { type: GraphQLString },
         eventFbLink: { type: GraphQLString },
         eventinfo: { type: GraphQLString },
-        speakerNames: { type: GraphQLString }
+        speakerNames: { type: GraphQLString },
+        eventVideos: { type: GraphQLString },
+        eventDate: { type: GraphQLString },
+        eventSlides: { type: GraphQLString }
       },
       resolve: (root: any, args: any) =>
         new Promise((resolve: any, reject: any) =>

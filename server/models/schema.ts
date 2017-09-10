@@ -29,7 +29,7 @@ const Query = new GraphQLObjectType({
         eventDate: { type: GraphQLString },
         eventSlides: { type: GraphQLString }
       },
-      resolve: (root: any, args: any) =>
+      resolve: (root: undefined, args: {}) =>
         new Promise((resolve: any, reject: any) =>
           model.find(
             args,

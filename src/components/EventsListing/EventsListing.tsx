@@ -4,7 +4,6 @@
 import * as React from "react";
 import { v4 } from "uuid";
 import { Container } from "../Container/Container";
-import * as event from "./test.json";
 
 type Props<A> = {
   isThreeQuarters?: boolean;
@@ -142,7 +141,7 @@ export class EventsListing extends React.PureComponent {
         </Columns>
         <Table>
           <TableHeaders theaders={tHeaders} />
-          <TableBody tbody={[event]} />
+          <TableBody tbody={[]} />
         </Table>
       </Container>
     );

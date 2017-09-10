@@ -22,9 +22,9 @@ VOLUME ["/data/db"]
 # Define working directory.
 WORKDIR /data
 
-# Define default command.
-# CMD ["mongod"]
-CMD ["mongoimport --host mongodb --db reach-engine --collection events --type json --file /events.json --jsonArray"]
+COPY events.json /data/events.json
+
+CMD mongod
 
 # Expose ports.
 #   - 27017: process

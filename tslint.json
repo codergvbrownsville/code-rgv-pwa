@@ -34,14 +34,14 @@
       false
     ],
     "eofline": false,
-    "export-name": true,
+    "export-name": false,
     "file-header": [
       false
     ],
     "forin": true,
     "function-name": false,
     "import-blacklist": false,
-    "import-name": true,
+    "import-name": false,
     "import-spacing": true,
     "indent": [
       true,
@@ -53,6 +53,7 @@
     "jquery-deferred-must-complete": true,
     "jsdoc-format": false,
     "jsx-wrap-multiline": false,
+    "jsx-boolean-value": false,
     "label-position": true,
     "linebreak-style": [
       true,
@@ -66,7 +67,7 @@
     ],
     "max-func-body-length": [
       true,
-      100,
+      200,
       {
         "ignore-parameters-to-function-regex": "describe"
       }
@@ -80,7 +81,7 @@
       false
     ],
     "missing-jsdoc": true,
-    "missing-optional-annotation": true,
+    "missing-optional-annotation": false,
     "mocha-avoid-only": true,
     "mocha-no-side-effect-code": true,
     "mocha-unneeded-done": true,
@@ -88,7 +89,7 @@
     "no-angle-bracket-type-assertion": false,
     "no-any": false,
     "no-arg": true,
-    "no-backbone-get-set-outside-model": true,
+    "no-backbone-get-set-outside-model": false,
     "no-banned-terms": true,
     "no-bitwise": true,
     "no-boolean-literal-compare": false,
@@ -99,7 +100,6 @@
     "no-console": [
       true,
       "debug",
-      "info",
       "log",
       "time",
       "timeEnd",
@@ -110,7 +110,7 @@
     "no-control-regex": true,
     "no-cookies": true,
     "no-debugger": true,
-    "no-default-export": true,
+    "no-default-export": false,
     "no-delete-expression": true,
     "no-disable-auto-sanitization": true,
     "no-document-domain": true,
@@ -120,8 +120,8 @@
     "no-duplicate-super": true,
     "no-duplicate-variable": true,
     "no-empty": true,
-    "no-empty-interface": true,
-    "no-empty-interfaces": true,
+    "no-empty-interface": false,
+    "no-empty-interfaces": false,
     "no-empty-line-after-opening-brace": false,
     "no-eval": true,
     "no-exec-script": true,
@@ -135,7 +135,7 @@
       "http://www.example.com/?.*",
       "http://www.examples.com/?.*"
     ],
-    "no-import-side-effect": true,
+    "no-import-side-effect": false,
     "no-increment-decrement": true,
     "no-inferrable-types": false,
     "no-inferred-empty-object-type": false,
@@ -145,7 +145,7 @@
     "no-invalid-template-strings": true,
     "no-invalid-this": true,
     "no-jquery-raw-elements": true,
-    "no-magic-numbers": false,
+    "no-magic-numbers": [false],
     "no-mergeable-namespace": false,
     "no-missing-visibility-modifiers": true,
     "no-misused-new": true,

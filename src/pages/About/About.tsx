@@ -7,7 +7,7 @@ import { fromJS, Map, List, Record } from "immutable";
 import { map, tap, identity } from "ramda";
 import * as L from "ramda-lens";
 import * as R from "ramda";
-import { immLens, log } from "../../utils";
+import { immLens } from "../../utils";
 import { AboutBanner, BackgroundSlice } from "../../components";
 
 interface LocationTitle extends Map<string, string> {

@@ -81,7 +81,7 @@
       false
     ],
     "missing-jsdoc": true,
-    "missing-optional-annotation": true,
+    "missing-optional-annotation": false,
     "mocha-avoid-only": true,
     "mocha-no-side-effect-code": true,
     "mocha-unneeded-done": true,
@@ -120,8 +120,8 @@
     "no-duplicate-super": true,
     "no-duplicate-variable": true,
     "no-empty": true,
-    "no-empty-interface": true,
-    "no-empty-interfaces": true,
+    "no-empty-interface": false,
+    "no-empty-interfaces": false,
     "no-empty-line-after-opening-brace": false,
     "no-eval": true,
     "no-exec-script": true,
@@ -135,7 +135,7 @@
       "http://www.example.com/?.*",
       "http://www.examples.com/?.*"
     ],
-    "no-import-side-effect": true,
+    "no-import-side-effect": false,
     "no-increment-decrement": true,
     "no-inferrable-types": false,
     "no-inferred-empty-object-type": false,

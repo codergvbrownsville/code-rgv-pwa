@@ -12,7 +12,7 @@ import { HashRouter, Switch } from "react-router-dom";
 import { makeStore } from "./makeStore";
 import { routes } from "./routes";
 const store = makeStore();
-
+store.dispatch({ type: "FETCH_EVENTS" });
 render(
   <Provider store={store}>
     {routes}

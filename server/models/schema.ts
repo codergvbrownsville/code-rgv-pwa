@@ -9,7 +9,6 @@ import {
 } from "graphql";
 import { model } from "./db";
 import { EventType } from "./EventType";
-import { Future } from "ramda-fantasy";
 
 const Query = new GraphQLObjectType({
   name: "Query",

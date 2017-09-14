@@ -2,7 +2,8 @@
  * Component rendering the events page
  */
 import * as React from "react";
-import { Agenda, BackgroundSlice } from "../../components";
+import { Agenda } from "../../components";
+import { EventsListing } from "../../components";
 
 type Props = {
   location: string;
@@ -11,9 +12,10 @@ type Props = {
 export default class Events extends React.Component<Props> {
   public render() {
     return (
-      <BackgroundSlice>
+      <section>
         <Agenda />
-      </BackgroundSlice>
+        <EventsListing />
+      </section>
     );
   }
 }

@@ -11,3 +11,4 @@ export * from "./AboutUs/AboutUs";
 export * from "./StrategicPlan";
 export * from "./MeetupAgenda";
 export * from "./PageTitle/PageTitle";
+export * from "./EventsListing";

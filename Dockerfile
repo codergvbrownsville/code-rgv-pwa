@@ -1,33 +1,16 @@
+FROM node:latest
 
-#
-# MongoDB Dockerfile
-#
-# https://github.com/dockerfile/mongodb
-#
+RUN mkdir -p /usr/src/app
 
-# Pull base image.
-FROM ubuntu
+WORKDIR /usr/src/app
 
-# Install MongoDB.
-RUN \
-  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
-  echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' > /etc/apt/sources.list.d/mongodb.list && \
-  apt-get update && \
-  apt-get install -y mongodb-org && \
-  rm -rf /var/lib/apt/lists/*
+COPY package.json /usr/src/app
 
-# Define mountable directories.
-VOLUME ["/data/db"]
+RUN npm install --unsafe-perm \
+    npm rebuild node-sass --force
 
-# Define working directory.
-WORKDIR /data
+COPY . /usr/src/app
 
-COPY events.json /data/events.json
+EXPOSE 8080
 
-CMD ["mongod"]
-
-# Expose ports.
-#   - 27017: process
-#   - 28017: http
-EXPOSE 27017
-EXPOSE 28017
+CMD ["npm", "run", "serve-prod"]

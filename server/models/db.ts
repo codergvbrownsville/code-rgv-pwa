@@ -4,7 +4,7 @@
 import * as mongoose from "mongoose";
 import { schema } from "./eventsSchema";
 
-const uri = "mongodb://172.17.0.3:27017/codergv";
+const uri = "mongodb://localhost:27017/codergv";
 
 mongoose.connect(uri, { useMongoClient: true });
 

@@ -2,19 +2,22 @@
  * Component rendering the events page
  */
 import * as React from "react";
-import { Agenda } from "../../components";
-import { EventsListing } from "../../components";
+import { connect } from "react-redux";
+import { List } from "immutable";
+import { EventMap } from "../../types";
+import { Agenda, EventsListing } from "../../components";
 
-type Props = {
+interface EventsProps {
   location: string;
-};
+  events: List<EventMap>;
+}
 
-export default class Events extends React.Component<Props> {
+export class Events extends React.Component<EventsProps> {
   public render() {
     return (
       <section>
         <Agenda />
-        <EventsListing />
+        <EventsListing events={List()} />
       </section>
     );
   }

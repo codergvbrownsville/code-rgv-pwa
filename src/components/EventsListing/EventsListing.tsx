@@ -3,6 +3,8 @@
  */
 import * as React from "react";
 import { v4 } from "uuid";
+import { List } from "immutable";
+import { EventMap } from "../../types";
 import { Container } from "../Container/Container";
 
 type Props<A> = {
@@ -94,29 +96,29 @@ type TBProps<A> = {
   tbody: A;
 };
 
-class TableBody extends React.PureComponent<TBProps<JSX.Element[]>> {
+class TableBody extends React.PureComponent<TBProps<List<EventMap>>> {
   public render() {
     return (
       <tbody>
         <tr>
-          {this.props.tbody.map((e: any) => [
+          {this.props.tbody.map((e: EventMap) => [
             <td key={v4()}>
-              {e.eventDate}
+              {e.get("eventDate")}
             </td>,
             <td key={v4()}>
-              {e.eventNum}
+              {e.get("eventNum")}
             </td>,
             <td key={v4()}>
-              {e.eventName}
+              {e.get("eventName")}
             </td>,
             <td key={v4()}>
-              {e.eventInfo}
+              {e.get("eventInfo")}
             </td>,
             <td key={v4()}>
-              {e.eventVideos}
+              {e.get("eventVideos")}
             </td>,
             <td key={v4()}>
-              {e.speakerNames}
+              {e.get("speakerNames")}
             </td>
           ])}
         </tr>
@@ -125,7 +127,11 @@ class TableBody extends React.PureComponent<TBProps<JSX.Element[]>> {
   }
 }
 
-export class EventsListing extends React.PureComponent {
+type EventProps = {
+  events: List<EventMap>;
+};
+
+export class EventsListing extends React.PureComponent<EventProps> {
   public render() {
     const tHeaders = ["Date", "#", "Event", "Content", "Video", "Speaker"];
     return (
@@ -141,7 +147,7 @@ export class EventsListing extends React.PureComponent {
         </Columns>
         <Table>
           <TableHeaders theaders={tHeaders} />
-          <TableBody tbody={[]} />
+          <TableBody tbody={this.props.events} />
         </Table>
       </Container>
     );

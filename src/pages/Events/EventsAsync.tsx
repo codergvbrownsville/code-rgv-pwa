@@ -2,19 +2,24 @@
  * Lazy loaded events page
  */
 import * as React from "react";
-import Events from "./Events";
+import { connect, DispatchProp, ComponentDecorator } from "react-redux";
+import { List } from "immutable";
+import { EventMap } from "../../types";
+import { Events } from "./Events";
 
 type Props = {
   location: {
     pathname: string;
   };
+  state: List<EventMap>;
 };
 
 type Component = {
   default(): Events;
+  Events(): Events;
 };
 
-export class EventsAsync extends React.Component<Props> {
+class Async extends React.Component<Props> {
   private component: Component;
 
   public componentWillMount() {
@@ -31,6 +36,15 @@ export class EventsAsync extends React.Component<Props> {
   public render() {
     return this.isNil(this.component)
       ? null
-      : <this.component.default location={this.props.location.pathname} />;
+      : <this.component.Events
+          location={this.props.location.pathname}
+          events={this.props.state}
+        />;
   }
 }
+
+const mapStateToProps = (state: { events: List<EventMap> }) => ({
+  state: state.events
+});
+
+export const EventsAsync = connect(mapStateToProps)(Async as any);

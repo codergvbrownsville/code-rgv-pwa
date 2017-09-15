@@ -11,8 +11,8 @@ import {
   StrategyPlan,
   Charter,
   CodeOfConduct,
-  EventsAsync,
-  ProjectsAsync
+  ProjectsAsync,
+  EventsAsync
 } from "./pages";
 import { AppContainer } from "./AppContainer";
 

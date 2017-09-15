@@ -3,7 +3,8 @@
  */
 import * as React from "react";
 import { v4 } from "uuid";
-import { List } from "immutable";
+import { List, Map } from "immutable";
+import { equals } from "ramda";
 import { EventMap } from "../../types";
 import { Container } from "../Container/Container";
 
@@ -24,7 +25,7 @@ class Column extends React.PureComponent<Props<JSX.Element[] | JSX.Element>> {
   }
 }
 
-class Columns extends React.PureComponent<Props<JSX.Element[]>> {
+class Columns extends React.PureComponent<Props<JSX.Element[] | JSX.Element>> {
   public render() {
     return (
       <div className="columns">
@@ -92,36 +93,86 @@ class TableHeaders extends React.PureComponent<THProps> {
   }
 }
 
+type TagProps = {
+  children: string;
+};
+
+class Tag extends React.PureComponent<TagProps> {
+  public render() {
+    return (
+      <span key={v4()} className="tag is-small">
+        {this.props.children}
+      </span>
+    );
+  }
+}
+
+type FAanchor = {
+  link: string;
+  children: string | JSX.Element;
+};
+
+class FontAwesomeAnchor extends React.PureComponent<FAanchor> {
+  public render() {
+    return (
+      <a key={v4()} href={this.props.link}>
+        {this.props.children}
+      </a>
+    );
+  }
+}
+
 type TBProps<A> = {
   tbody: A;
 };
 
 class TableBody extends React.PureComponent<TBProps<List<EventMap>>> {
+  private isEqualEmptyString(s: string) {
+    return (c: JSX.Element) => (equals(s, "") ? "" : c);
+  }
+
   public render() {
     return (
       <tbody>
-        <tr>
-          {this.props.tbody.map((e: EventMap) => [
+        {this.props.tbody.map((e: EventMap) =>
+          <tr key={v4()}>
             <td key={v4()}>
               {e.get("eventDate")}
-            </td>,
+            </td>
             <td key={v4()}>
               {e.get("eventNum")}
-            </td>,
-            <td key={v4()}>
-              {e.get("eventName")}
-            </td>,
-            <td key={v4()}>
-              {e.get("eventInfo")}
-            </td>,
-            <td key={v4()}>
-              {e.get("eventVideos")}
-            </td>,
-            <td key={v4()}>
-              {e.get("speakerNames")}
             </td>
-          ])}
-        </tr>
+            <td key={v4()}>
+              <a key={v4()} href={e.get("eventFbLink") as string}>
+                {e.get("eventName")}
+              </a>
+            </td>
+            <td key={v4()}>
+              {this.isEqualEmptyString(e.get("eventGits") as string)(
+                <FontAwesomeAnchor link={e.get("eventGits") as string}>
+                  <i className="fa fa-github" aria-hidden="true" />
+                </FontAwesomeAnchor>
+              )}
+            </td>
+            <td>
+              {this.isEqualEmptyString(e.get("eventVideos") as string)(
+                <FontAwesomeAnchor link={e.get("eventVideos") as string}>
+                  <i className="fa fa-video-camera" aria-hidden="true" />
+                </FontAwesomeAnchor>
+              )}
+            </td>
+            <td key={v4()}>
+              {(e.get("speakerNames") as string[]).map(
+                names =>
+                  equals(names, "")
+                    ? ""
+                    : <Tag>
+                        {names}
+                      </Tag>
+              )}
+            </td>
+          </tr>
+        )}
       </tbody>
     );
   }
@@ -132,7 +183,17 @@ type EventProps = {
 };
 
 export class EventsListing extends React.PureComponent<EventProps> {
+  private sortEvents(l: List<EventMap>) {
+    return l.sortBy((e: EventMap) =>
+      parseInt(e.get("eventNum") as string, 10)
+    ) as List<EventMap>;
+  }
+
   public render() {
+    // <Column>
+    //   <Button isPrimary>Create Event</Button>
+    //   <Button>Delete Event</Button>
+    // </Column>
     const tHeaders = ["Date", "#", "Event", "Content", "Video", "Speaker"];
     return (
       <Container>
@@ -140,14 +201,10 @@ export class EventsListing extends React.PureComponent<EventProps> {
           <Column isThreeQuarters>
             <Title>Listing of events:</Title>
           </Column>
-          <Column>
-            <Button isPrimary>Create Event</Button>
-            <Button>Delete Event</Button>
-          </Column>
         </Columns>
         <Table>
           <TableHeaders theaders={tHeaders} />
-          <TableBody tbody={this.props.events} />
+          <TableBody tbody={this.sortEvents(this.props.events)} />
         </Table>
       </Container>
     );

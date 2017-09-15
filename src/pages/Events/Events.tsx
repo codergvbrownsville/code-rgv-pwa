@@ -17,7 +17,7 @@ export class Events extends React.Component<EventsProps> {
     return (
       <section>
         <Agenda />
-        <EventsListing events={List()} />
+        <EventsListing events={this.props.events} />
       </section>
     );
   }

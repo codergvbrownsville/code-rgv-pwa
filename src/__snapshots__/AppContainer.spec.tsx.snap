@@ -15,6 +15,10 @@ exports[`AppContainer snapshot 1`] = `
     >
       <a
         className="navbar-item"
+        href={undefined}
+        rel="noopener noreferrer"
+        role="button"
+        target="_blank"
       >
         <img
           alt="brownsville logo"
@@ -128,6 +132,7 @@ exports[`AppContainer snapshot 1`] = `
           target="_blank"
         >
           <i
+            aria-hidden="true"
             className="fa fa-github"
           />
         </a>

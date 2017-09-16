@@ -55,12 +55,10 @@ export class Agenda extends React.PureComponent {
               </Item>
               <List>
                 <Item>
-                  <Paragraph>
-                    Free food and drinks are always provided at our Meetups.
-                    Come around 6:30 pm to get settled and grab a drink and a
-                    slice of pizza, wings, sandwich or wrap. We try to always
-                    have healthy options available.
-                  </Paragraph>
+                  Free food and drinks are always provided at our Meetups. Come
+                  around 6:30 pm to get settled and grab a drink and a slice of
+                  pizza, wings, sandwich or wrap. We try to always have healthy
+                  options available.
                 </Item>
               </List>
             </List>

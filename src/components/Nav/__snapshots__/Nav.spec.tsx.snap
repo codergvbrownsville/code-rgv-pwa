@@ -32,8 +32,10 @@ exports[`Navbar exists 1`] = `
       </span>
     </a>
     <div
-      className="navbar-burger"
+      className="navbar-burger "
       data-target="codeRgvMenu"
+      onClick={[Function]}
+      role="button"
     >
       <span />
       <span />

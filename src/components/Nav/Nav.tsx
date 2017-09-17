@@ -5,6 +5,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { equals } from "ramda";
 import * as bvilleLogo from "../../assets/bville_logo.png";
+import { TOGGLE_NAVBAR_IS_BURGER_ACTIVE } from "../../action-creators";
 import { NavLinks } from "./NavLinks";
 
 type Props<T> = {
@@ -56,12 +57,14 @@ class NavbarItem extends React.PureComponent<
 
 type NavbarMenuProps = {
   id: string;
+  isActiveClass: boolean;
 };
 
 class NavbarMenu extends React.PureComponent<NavbarMenuProps> {
   public render() {
+    const isActive = this.props.isActiveClass ? "is-active" : "";
     return (
-      <div className="navbar-menu" id={this.props.id}>
+      <div className={`navbar-menu ${isActive}`} id={this.props.id}>
         {this.props.children}
       </div>
     );
@@ -80,6 +83,7 @@ class NavbarEnd extends React.PureComponent<Props<JSX.Element[]>> {
 
 type NavbarBurgerProps = {
   dataTarget: string;
+  toggleIsActive(a: "TOGGLE_NAVBAR_IS_BURGER_ACTIVE"): void;
 };
 
 type NavbarBurgerState = {
@@ -96,10 +100,12 @@ class NavbarBurger extends React.PureComponent<NavbarBurgerProps> {
     };
   }
 
-  public attachIsActiveClass = () =>
+  public attachIsActiveClass = () => {
     this.setState((prev: NavbarBurgerState, curr: NavbarBurgerState) => ({
       burgerClassName: equals(prev.burgerClassName, "") ? "is-active" : ""
     }));
+    this.props.toggleIsActive(TOGGLE_NAVBAR_IS_BURGER_ACTIVE);
+  };
 
   public render() {
     return (
@@ -137,7 +143,12 @@ class FontAwesomeIcon extends React.PureComponent<FontAwesomeIconProps> {
   }
 }
 
-export class Nav extends React.PureComponent {
+interface NavProps {
+  isBurgerActive: boolean;
+  dispatch(a: string): void;
+}
+
+export class Nav extends React.PureComponent<NavProps> {
   public render() {
     return (
       <Navbar>
@@ -146,13 +157,19 @@ export class Nav extends React.PureComponent {
             <img src={bvilleLogo} alt="brownsville logo" />
             <Title>CodeRGV</Title>
           </NavbarItem>
-          <NavbarBurger dataTarget={"codeRgvMenu"}>
+          <NavbarBurger
+            dataTarget={"codeRgvMenu"}
+            toggleIsActive={this.props.dispatch}
+          >
             <span />
             <span />
             <span />
           </NavbarBurger>
         </NavbarBrand>
-        <NavbarMenu id={"codeRgvMenu"}>
+        <NavbarMenu
+          id={"codeRgvMenu"}
+          isActiveClass={this.props.isBurgerActive}
+        >
           <NavLinks />
           <NavbarEnd>
             <NavbarItem href={"https://github.com/codergvbrownsville"}>

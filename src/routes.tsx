@@ -12,7 +12,8 @@ import {
   Charter,
   CodeOfConduct,
   ProjectsAsync,
-  EventsAsync
+  EventsAsync,
+  NavContainer
 } from "./pages";
 import { AppContainer } from "./AppContainer";
 
@@ -25,6 +26,7 @@ declare const process: {
 const devAppRoute = (
   <HashRouter>
     <AppContainer>
+      <NavContainer />
       <Route exact={true} path="/" component={HomeAsync} />
       <Route path="/events" component={EventsAsync} />
       <Route path="/projects" component={ProjectsAsync} />
@@ -42,6 +44,7 @@ const devAppRoute = (
 const prodAppRoute = (
   <BrowserRouter>
     <AppContainer>
+      <NavContainer />
       <Route exact={true} path="/" component={HomeAsync} />
       <Route path="/events" component={EventsAsync} />
       <Route path="/projects" component={ProjectsAsync} />

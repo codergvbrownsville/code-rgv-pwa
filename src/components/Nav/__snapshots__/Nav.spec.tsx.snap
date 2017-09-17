@@ -43,7 +43,7 @@ exports[`Navbar exists 1`] = `
     </div>
   </div>
   <div
-    className="navbar-menu"
+    className="navbar-menu is-active"
     id="codeRgvMenu"
   >
     <div

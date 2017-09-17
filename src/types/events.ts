@@ -3,6 +3,8 @@
  */
 import { Map } from "immutable";
 
+type Keys<T> = keyof T;
+
 export interface Action<T> {
   type: string;
   payload: T;
@@ -20,15 +22,5 @@ export interface Event {
   eventSlides: string;
 }
 
-export type EventKeys =
-  | "eventNum"
-  | "eventName"
-  | "eventGits"
-  | "eventFbLink"
-  | "eventInfo"
-  | "speakerNames"
-  | "eventVideos"
-  | "eventDate"
-  | "eventSlides";
-
-export interface EventMap extends Map<EventKeys, Partial<Event[EventKeys]>> {}
+export interface EventMap
+  extends Map<Keys<Event>, Partial<Event[Keys<Event>]>> {}

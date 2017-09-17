@@ -11,7 +11,6 @@ export class AppContainer extends React.Component<any, any> {
     };
     return (
       <div>
-        <Nav />
         <div>
           {this.props.children}
         </div>

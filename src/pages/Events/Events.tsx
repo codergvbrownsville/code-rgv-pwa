@@ -5,7 +5,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { List } from "immutable";
 import { EventMap } from "../../types";
-import { Agenda, EventsListing } from "../../components";
+import { Agenda, EventsListing, OverflowSection } from "../../components";
 
 interface EventsProps {
   location: string;
@@ -17,7 +17,9 @@ export class Events extends React.Component<EventsProps> {
     return (
       <section>
         <Agenda />
-        <EventsListing events={this.props.events} />
+        <OverflowSection>
+          <EventsListing events={this.props.events} />
+        </OverflowSection>
       </section>
     );
   }

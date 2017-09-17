@@ -4,6 +4,7 @@
 import * as React from "react";
 import { connect, DispatchProp, ComponentDecorator } from "react-redux";
 import { List } from "immutable";
+import { isNil } from "ramda";
 import { EventMap } from "../../types";
 import { Events } from "./Events";
 
@@ -29,12 +30,8 @@ class Async extends React.Component<Props> {
     });
   }
 
-  private isNil(c: Component): boolean {
-    return c === undefined || c === null;
-  }
-
   public render() {
-    return this.isNil(this.component)
+    return isNil(this.component)
       ? null
       : <this.component.Events
           location={this.props.location.pathname}
@@ -43,7 +40,11 @@ class Async extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = (state: { events: List<EventMap> }) => ({
+type State = {
+  events: List<EventMap>;
+};
+
+const mapStateToProps = (state: State) => ({
   state: state.events
 });
 

@@ -7,7 +7,7 @@ import { SET_NAVIGATION_IS_ACTIVE_CLASS } from "../../action-creators";
 type Keys<T> = keyof T;
 
 interface NavUi {
-  isNavigationActive: string;
+  isBurgerActive: string;
 }
 
 interface NavUiMap extends Map<Keys<NavUi>, NavUi[Keys<NavUi>]> {}
@@ -20,10 +20,10 @@ interface Action<A> {
 }
 
 const setNavClass = (state: State, action: Action<string>) =>
-  state.set("isNavigationActive", action.payload);
+  state.set("isBurgerActive", action.payload);
 
 const initialState = Map({
-  isNavigationActive: ""
+  isBurgerActive: ""
 }) as State;
 
 export const navigation = (

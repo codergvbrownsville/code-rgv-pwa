@@ -1,4 +1,4 @@
 /**
  * Barrel file for ui-navigation
  */
-export * from "./navigation";
+export * from "./ui";

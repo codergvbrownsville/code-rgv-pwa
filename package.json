@@ -14,6 +14,7 @@
     "precommit": "lint-staged",
     "prepush": "run-p clean build-prod lint test",
     "test": "jest",
+    "shit-staging": "./create-dist.sh",
     "postinstall": "npm run prepush"
   },
   "repository": {

@@ -224,7 +224,7 @@
     "prefer-function-over-method": false,
     "prefer-method-signature": true,
     "prefer-template": false,
-    "prefer-type-cast": true,
+    "prefer-type-cast": false,
     "strict-type-predicates": false,
     "promise-function-async": false,
     "promise-must-complete": true,

@@ -1,6 +1,6 @@
 {
   "name": "codergvb-pwa",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-beta.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "precommit": "lint-staged",
     "prepush": "run-p clean build-prod lint test",
     "test": "jest",
+    "shit-staging": "./create-dist.sh",
     "postinstall": "npm run prepush"
   },
   "repository": {
@@ -130,7 +131,7 @@
     "express": "4.15.4",
     "express-graphql": "0.6.11",
     "fluture": "7.1.2",
-    "graphiql": "0.11.3",
+    "graphiql": "^0.6.0 || ^0.7.0 || ^0.8.0-b || ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0",
     "graphql": "0.11.3",
     "immutable": "3.8.1",
     "mongoose": "4.11.10",

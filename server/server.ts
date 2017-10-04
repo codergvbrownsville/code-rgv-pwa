@@ -29,4 +29,4 @@ app.use(
   })
 );
 
-app.listen(PORT, () => console.info(`Listening on port ${PORT}!`));
+app.listen(PORT, () => console.info(`Listening to port ${PORT}`));

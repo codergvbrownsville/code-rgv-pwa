@@ -1,0 +1,15 @@
+db:
+  image: mongo:latest
+  ports:
+    - "27017:27017"
+  restart: always
+web:
+  build: .
+  volumes:
+    - ./:/app
+  ports:
+    - "3000:3000"
+  links:
+    - db
+  command: npm run serve-dev
+

@@ -2,20 +2,8 @@
  * Home Page
  */
 import * as React from "react";
-import { Nav } from "../../components";
+import { HomeBackground } from "../../components";
 import * as codeRgvLogo from "../../assets/codergvb_logo.png";
-
-class HomeBackground extends React.Component {
-  public render() {
-    return (
-      <div style={{ backgroundColor: "#00b3b3" }}>
-        <figure className="image">
-          {this.props.children}
-        </figure>
-      </div>
-    );
-  }
-}
 
 type Props = {
   location: string;

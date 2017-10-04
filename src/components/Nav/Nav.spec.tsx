@@ -8,9 +8,11 @@ import * as React from "react";
 import { Nav } from "./Nav";
 
 test("Navbar exists", () => {
+  const isBurgerActive = true;
+  const dispatch = () => console.info("test");
   const component = renderer.create(
     <MemoryRouter>
-      <Nav />
+      <Nav isBurgerActive dispatch={dispatch} />
     </MemoryRouter>
   );
   const tree = component.toJSON();

@@ -9,7 +9,7 @@ export class PageTitle extends React.PureComponent {
       color: "#FFAA00"
     };
     return (
-      <h1 className="title is-1 has-text-centered" style={titleStyle}>
+      <h1 className="title is-2 has-text-centered" style={titleStyle}>
         {this.props.children}
       </h1>
     );

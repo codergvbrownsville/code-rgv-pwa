@@ -10,3 +10,4 @@ export * from "./About/Charter";
 export * from "./About/CodeOfConduct";
 export * from "./Events/EventsAsync";
 export * from "./Projects/ProjectsAsync";
+export * from "./Navigation";

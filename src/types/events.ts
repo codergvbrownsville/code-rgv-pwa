@@ -1,7 +1,7 @@
 /**
  * Types used in events
  */
-import { Map } from "immutable";
+import { Map, List } from "immutable";
 
 type Keys<T> = keyof T;
 
@@ -16,7 +16,7 @@ export interface Event {
   eventGits: string;
   eventFbLink: string;
   eventInfo: string;
-  speakerNames: string[];
+  speakerNames: List<string>;
   eventVideos: string;
   eventDate: string;
   eventSlides: string;

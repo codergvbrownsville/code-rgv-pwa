@@ -1,7 +1,6 @@
 /**
  * Main file
  */
-// tslint:disable-next-line:no-import-side-effect
 import "./pwa";
 import "./style.scss";
 import * as React from "react";
@@ -12,7 +11,9 @@ import { HashRouter, Switch } from "react-router-dom";
 import { makeStore } from "./makeStore";
 import { routes } from "./routes";
 const store = makeStore();
+
 store.dispatch({ type: "FETCH_EVENTS" });
+
 render(
   <Provider store={store}>
     {routes}

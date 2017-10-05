@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventsListing snapshot 1`] = `
+<section
+  className="section"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="columns"
+    >
+      <div
+        className="column is-9"
+      >
+        <h1
+          className="title is-3"
+        >
+          Listing of events:
+        </h1>
+      </div>
+    </div>
+    <table
+      className="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Date
+          </th>
+          <th>
+            #
+          </th>
+          <th>
+            Event
+          </th>
+          <th>
+            Content
+          </th>
+          <th>
+            Video
+          </th>
+          <th>
+            Speaker
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</section>
+`;

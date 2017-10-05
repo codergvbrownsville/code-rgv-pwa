@@ -4,9 +4,11 @@
 import * as React from "react";
 import { v4 } from "uuid";
 import { List, Map } from "immutable";
-import { equals } from "ramda";
+import { equals, isNil, tap, compose } from "ramda";
 import { EventMap } from "../../types";
 import { Container } from "../Container/Container";
+
+const log = tap(console.log.bind(console));
 
 type Props<A> = {
   isThreeQuarters?: boolean;
@@ -93,11 +95,11 @@ class TableHeaders extends React.PureComponent<THProps> {
   }
 }
 
-type TagProps = {
-  children: string;
+type TagProps<T> = {
+  children: T;
 };
 
-class Tag extends React.PureComponent<TagProps> {
+class Tag<T> extends React.PureComponent<Partial<TagProps<T>>> {
   public render() {
     return (
       <span key={v4()} className="tag is-small">
@@ -131,10 +133,14 @@ class TableBody extends React.PureComponent<TBProps<List<EventMap>>> {
     return (c: JSX.Element) => (equals(s, "") ? "" : c);
   }
 
+  private defaultList<E>(l: List<E>) {
+    return isNil(l) ? List() : l;
+  }
+
   public render() {
     return (
-      <tbody>
-        {this.props.tbody.map((e: EventMap) =>
+      <tbody key={v4()}>
+        {this.defaultList(this.props.tbody).map((e: EventMap) =>
           <tr key={v4()}>
             <td key={v4()}>
               {e.get("eventDate")}
@@ -154,7 +160,7 @@ class TableBody extends React.PureComponent<TBProps<List<EventMap>>> {
                 </FontAwesomeAnchor>
               )}
             </td>
-            <td>
+            <td key={v4()}>
               {this.isEqualEmptyString(e.get("eventVideos") as string)(
                 <FontAwesomeAnchor link={e.get("eventVideos") as string}>
                   <i className="fa fa-video-camera" aria-hidden="true" />
@@ -162,11 +168,11 @@ class TableBody extends React.PureComponent<TBProps<List<EventMap>>> {
               )}
             </td>
             <td key={v4()}>
-              {(e.get("speakerNames") as string[]).map(
+              {this.defaultList(e.get("speakerNames") as List<string>).map(
                 names =>
                   equals(names, "")
                     ? ""
-                    : <Tag>
+                    : <Tag key={v4()}>
                         {names}
                       </Tag>
               )}
@@ -179,10 +185,14 @@ class TableBody extends React.PureComponent<TBProps<List<EventMap>>> {
 }
 
 type EventProps = {
-  events: List<EventMap>;
+  events?: List<EventMap>;
 };
 
 export class EventsListing extends React.PureComponent<EventProps> {
+  private defaultList(l?: List<EventMap>): List<undefined | EventMap> {
+    return isNil(l) ? List() : l;
+  }
+
   private sortEvents(l: List<EventMap>) {
     return l.sortBy((e: EventMap) =>
       parseInt(e.get("eventNum") as string, 10)
@@ -190,10 +200,6 @@ export class EventsListing extends React.PureComponent<EventProps> {
   }
 
   public render() {
-    // <Column>
-    //   <Button isPrimary>Create Event</Button>
-    //   <Button>Delete Event</Button>
-    // </Column>
     const tHeaders = ["Date", "#", "Event", "Content", "Video", "Speaker"];
     return (
       <Container>
@@ -204,7 +210,11 @@ export class EventsListing extends React.PureComponent<EventProps> {
         </Columns>
         <Table>
           <TableHeaders theaders={tHeaders} />
-          <TableBody tbody={this.sortEvents(this.props.events)} />
+          <TableBody
+            tbody={compose(this.sortEvents, this.defaultList)(
+              this.props.events
+            )}
+          />
         </Table>
       </Container>
     );

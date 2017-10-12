@@ -2,12 +2,15 @@
  * Events Listing test
  */
 import { MemoryRouter } from "react-router-dom";
-import { shallow, mount } from "enzyme";
+import { shallow, mount, configure } from "enzyme";
 import * as renderer from "react-test-renderer";
 import * as React from "react";
 import { List, fromJS } from "immutable";
 import { EventsListing } from "./EventsListing";
 import { events } from "./events";
+import * as ReactSixteenAdapter from "enzyme-adapter-react-16";
+
+configure({ adapter: new ReactSixteenAdapter() });
 
 test("EventsListing snapshot", () => {
   const component = renderer.create(
@@ -33,7 +36,7 @@ test("<EventsListing /> before state hydration", () => {
   expect(component.find("tr").length).toEqual(2);
 });
 
-test("<EvevntsListing /> when state has been hydrated", () => {
+test("<EventsListing /> when state has been hydrated", () => {
   const component = mount(<EventsListing events={fromJS(events)} />);
   expect(component.length).toEqual(1);
   expect(component.find("table").length).toEqual(1);
